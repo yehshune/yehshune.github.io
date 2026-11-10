@@ -23,7 +23,7 @@
     font: 16px/1.6 system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   }
   main {
-    width: 100%; max-width: 440px; background: var(--card); border: 1px solid var(--border);
+    width: 100%; max-width: 480px; background: var(--card); border: 1px solid var(--border);
     border-radius: 12px; padding: 28px 24px;
   }
   h1 { margin: 0 0 8px; font-size: 1.5rem; }
@@ -38,6 +38,13 @@
   .lang button {
     background: none; border: 0; padding: 0 4px; color: var(--accent); cursor: pointer; font: inherit;
   }
+  .qr-hint { margin: 24px 0 12px; font-size: 0.875rem; text-align: center; }
+  .qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  figure {
+    margin: 0; padding: 12px; border: 1px solid var(--border); border-radius: 8px; text-align: center;
+  }
+  figure img { display: block; width: 100%; height: auto; border-radius: 4px; background: #fff; }
+  figcaption { margin-top: 8px; font-weight: 600; font-size: 0.9375rem; }
   footer { margin-top: 16px; font-size: 0.8125rem; color: var(--muted); text-align: center; }
   footer a { color: inherit; }
 </style>
@@ -47,6 +54,8 @@
   <h1 id="title"></h1>
   <p id="desc"></p>
   <ul id="channels"></ul>
+  <p class="qr-hint" id="qr-hint"></p>
+  <div class="qr-grid" id="qr-codes"></div>
   <div class="lang"><button type="button" data-lang="zh">中文</button>·<button type="button" data-lang="en">English</button></div>
   <footer><a href="https://github.com/yehshune">github.com/yehshune</a></footer>
 </main>
@@ -55,6 +64,11 @@
   const CHANNELS = [
     { name: 'Ko-fi', url: 'https://ko-fi.com/shu540886' },
   ];
+  // 掃碼收款：圖片放在 support/ 目錄，name 依語系顯示
+  const QR_CODES = [
+    { name: { zh: '微信支付', en: 'WeChat Pay' }, src: 'wechat-pay.png' },
+    { name: { zh: '支付寶', en: 'Alipay' }, src: 'alipay.png' },
+  ];
 
   const TEXT = {
     zh: {
@@ -62,12 +76,16 @@
       title: '支持開發',
       desc: '我的專案（例如 PoeXD）都免費且開源。如果它們幫你省下時間，歡迎透過以下管道贊助支持。',
       cta: (name) => `前往 ${name} 贊助`,
+      qrHint: '或使用 App 掃描 QR Code（手機可長按圖片儲存，再從相簿掃描）',
+      qrAlt: (name) => `${name}收款 QR Code`,
     },
     en: {
       lang: 'en',
       title: 'Support Development',
       desc: 'My projects, such as PoeXD, are free and open source. If they save you time, you can support their development below.',
       cta: (name) => `Support on ${name}`,
+      qrHint: 'Or scan a QR code with the app (on mobile, save the image and scan it from your photos)',
+      qrAlt: (name) => `${name} QR code`,
     },
   };
 
@@ -86,6 +104,20 @@
       a.textContent = t.cta(c.name);
       li.append(a);
       return li;
+    }));
+    document.getElementById('qr-hint').textContent = t.qrHint;
+    document.getElementById('qr-codes').replaceChildren(...QR_CODES.map((q) => {
+      const fig = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = q.src;
+      img.width = 480;
+      img.height = 480;
+      img.loading = 'lazy';
+      img.alt = t.qrAlt(q.name[key]);
+      const cap = document.createElement('figcaption');
+      cap.textContent = q.name[key];
+      fig.append(img, cap);
+      return fig;
     }));
   }
 
