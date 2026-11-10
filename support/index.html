@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support yehshune</title>
+<meta name="description" content="贊助 yehshune 的開源專案（PoeXD 等）。Support yehshune's open-source projects.">
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1f2328; --muted: #59636e;
+    --border: #d8dee4; --accent: #0969da; --accent-text: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --card: #161b22; --text: #e6edf3; --muted: #9198a1;
+      --border: #30363d; --accent: #4493f8; --accent-text: #0d1117;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 32px 16px; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  }
+  main {
+    width: 100%; max-width: 440px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px 24px;
+  }
+  h1 { margin: 0 0 8px; font-size: 1.5rem; }
+  p { margin: 0 0 20px; color: var(--muted); }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  a.channel {
+    display: block; padding: 12px 16px; border-radius: 8px; text-align: center; font-weight: 600;
+    text-decoration: none; background: var(--accent); color: var(--accent-text);
+  }
+  a.channel:hover, a.channel:focus-visible { filter: brightness(1.08); }
+  .lang { margin-top: 20px; font-size: 0.875rem; text-align: center; }
+  .lang button {
+    background: none; border: 0; padding: 0 4px; color: var(--accent); cursor: pointer; font: inherit;
+  }
+  footer { margin-top: 16px; font-size: 0.8125rem; color: var(--muted); text-align: center; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title"></h1>
+  <p id="desc"></p>
+  <ul id="channels"></ul>
+  <div class="lang"><button type="button" data-lang="zh">中文</button>·<button type="button" data-lang="en">English</button></div>
+  <footer><a href="https://github.com/yehshune">github.com/yehshune</a></footer>
+</main>
+<script>
+  // 新增贊助管道時只改這裡（並同步 yehshune/.github 的 FUNDING.yml）
+  const CHANNELS = [
+    { name: 'Ko-fi', url: 'https://ko-fi.com/shu540886' },
+  ];
+
+  const TEXT = {
+    zh: {
+      lang: 'zh-Hant-TW',
+      title: '支持開發',
+      desc: '我的專案（例如 PoeXD）都免費且開源。如果它們幫你省下時間，歡迎透過以下管道贊助支持。',
+      cta: (name) => `前往 ${name} 贊助`,
+    },
+    en: {
+      lang: 'en',
+      title: 'Support Development',
+      desc: 'My projects, such as PoeXD, are free and open source. If they save you time, you can support their development below.',
+      cta: (name) => `Support on ${name}`,
+    },
+  };
+
+  function render(key) {
+    const t = TEXT[key];
+    document.documentElement.lang = t.lang;
+    document.getElementById('title').textContent = t.title;
+    document.getElementById('desc').textContent = t.desc;
+    const list = document.getElementById('channels');
+    list.replaceChildren(...CHANNELS.map((c) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.className = 'channel';
+      a.href = c.url;
+      a.rel = 'noopener noreferrer';
+      a.textContent = t.cta(c.name);
+      li.append(a);
+      return li;
+    }));
+  }
+
+  const params = new URLSearchParams(location.search);
+  const initial = params.get('lang') === 'en' || (!params.get('lang') && !/^zh/i.test(navigator.language)) ? 'en' : 'zh';
+  document.querySelectorAll('[data-lang]').forEach((btn) => btn.addEventListener('click', () => render(btn.dataset.lang)));
+  render(initial);
+</script>
+</body>
+</html>
