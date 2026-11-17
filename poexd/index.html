@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PoeXD 使用教學</title>
+<meta name="description" content="PoeXD Extension 使用教學：安裝、線上搜尋主控台、常用詞綴群組、詞綴篩選、PoB 購物清單、書籤與市集漢化。">
+<meta property="og:title" content="PoeXD 使用教學">
+<meta property="og:description" content="Path of Exile 官方交易市集輔助擴充套件的完整使用說明。">
+<meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
+<link rel="icon" href="../assets/poexd/logo-300x300.png">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<nav class="nav" aria-label="主要導覽">
+  <div class="wrap">
+    <a class="brand" href="../">yeh<span>shune</span></a>
+    <ul>
+      <li><a class="link" href="../#works">作品</a></li>
+      <li><a class="link" href="./" aria-current="page">PoeXD 教學</a></li>
+      <li class="hide-sm"><a class="link" href="../support/">贊助</a></li>
+      <li class="hide-sm"><a class="link" href="https://github.com/yehshune">GitHub</a></li>
+    </ul>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="切換主題">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="guide-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../">首頁</a> / 作品 / PoeXD Extension</p>
+    <div class="title">
+      <img src="../assets/poexd/logo-300x300.png" width="300" height="300" alt="">
+      <h1>PoeXD Extension 使用教學</h1>
+    </div>
+    <p class="lead">PoeXD 會在《流亡黯道》PoE 1／PoE 2 官方交易市集右側加上一條工具列，讓你集中監看即時搜尋、快速套用詞綴、整理書籤，並把國際服市集翻成中文。這頁從安裝開始，逐一說明每個功能怎麼用。</p>
+    <div class="actions">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg">Chrome 線上應用程式商店</a>
+      <a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hnnpgpcnmgjbmmhgogcljbnfoklblgmb">Edge 附加元件</a>
+      <a class="btn" href="https://github.com/yehshune/PoeXD-Extension">原始碼</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap guide">
+  <nav class="toc" aria-label="本頁目錄">
+    <p>目錄</p>
+    <ol>
+      <li><a href="#install">安裝</a></li>
+      <li><a href="#first-run">第一次使用</a></li>
+      <li><a href="#live-search">線上搜尋主控台</a></li>
+      <li><a href="#stat-groups">常用詞綴群組與搜尋預覽</a></li>
+      <li><a href="#affix">詞綴篩選與 T 階</a></li>
+      <li><a href="#results">搜尋結果強化</a></li>
+      <li><a href="#pob">PoB 購物清單</a></li>
+      <li><a href="#bookmarks">書籤與歷史紀錄</a></li>
+      <li><a href="#translation">市集漢化</a></li>
+      <li><a href="#settings">設定與快捷鍵</a></li>
+      <li><a href="#faq">常見問題</a></li>
+    </ol>
+  </nav>
+
+  <!--
+    新增截圖的方法：
+    1. 圖片放到 assets/poexd/（建議 1280×800 JPEG，帳號名稱記得遮掉）
+    2. 把對應的 <div class="todo">…</div> 換成
+       <img src="../assets/poexd/檔名.jpg" width="1280" height="800" alt="這張圖在示範什麼" loading="lazy">
+  -->
+  <article class="doc">
+    <section id="install">
+      <h2>安裝</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>瀏覽器</th><th>安裝方式</th></tr></thead>
+          <tbody>
+            <tr><td>Chrome、Brave 等 Chromium 瀏覽器</td><td><a href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg">Chrome 線上應用程式商店</a>，按「加到 Chrome」</td></tr>
+            <tr><td>Microsoft Edge</td><td><a href="https://microsoftedge.microsoft.com/addons/detail/hnnpgpcnmgjbmmhgogcljbnfoklblgmb">Edge 附加元件</a>，按「取得」</td></tr>
+            <tr><td>手動安裝（不會自動更新）</td><td>見下方步驟</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>商店版會自動更新，建議優先使用。Firefox 目前不提供。</p>
+
+      <h3>手動安裝</h3>
+      <ol class="steps">
+        <li>到 <a href="https://github.com/yehshune/PoeXD-Extension/releases">GitHub Releases</a> 下載最新版的 <code>chromium.zip</code>，解壓縮到一個固定的資料夾（之後不要刪掉或搬移）。</li>
+        <li>在網址列輸入 <code>chrome://extensions/</code>（Edge 為 <code>edge://extensions/</code>），打開右上角的「開發人員模式」。</li>
+        <li>按「載入未封裝項目」，選擇剛才解壓縮的資料夾。</li>
+      </ol>
+      <div class="note"><p>手動安裝版不會自動更新，有新版本時需要重新下載並覆蓋資料夾，再到擴充功能頁按重新載入。</p></div>
+    </section>
+
+    <section id="first-run">
+      <h2>第一次使用</h2>
+      <ol class="steps">
+        <li>開啟 <a href="https://www.pathofexile.com/trade">官方交易網站</a>（台服、國服也支援），頁面右側會出現 PoeXD 工具列。</li>
+        <li>工具列的分頁分別是書籤、歷史紀錄、常用詞綴群組、PoB 購物清單等功能；點分頁即可切換。</li>
+        <li>點瀏覽器右上角的 PoeXD 圖示，可以個別開關各項功能模組（T 階快捷按鈕、詞綴選擇器、價格換算、市集漢化⋯）。</li>
+      </ol>
+      <figure class="shot">
+        <div class="todo">截圖待補：交易網站右側的 PoeXD 工具列全貌</div>
+        <figcaption>開啟交易網站後，右側出現的 PoeXD 工具列。</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="todo">截圖待補：點擊瀏覽器工具列圖示後的模組開關面板</div>
+        <figcaption>點擴充套件圖示可以個別開關功能模組。</figcaption>
+      </figure>
+    </section>
+
+    <section id="live-search">
+      <h2>線上搜尋主控台</h2>
+      <p>在單一分頁集中監聽多組即時搜尋（Live Search），斷線自動重連，有新物品上架時會即時出現並可播放提示音。</p>
+      <ol class="steps">
+        <li>開啟線上搜尋主控台，可以「從書籤挑選」要監聽的搜尋，或「輸入搜尋網址」直接貼上交易網站的搜尋連結。</li>
+        <li>連線會依書籤資料夾分組，可以批次啟用或停止；點單一連線可以只看那組的結果。</li>
+        <li>主控台會即時顯示官方 API 的速率狀態，避免監聽太多組而被暫時限制。</li>
+        <li>關掉瀏覽器再打開時，可以恢復上次的連線。</li>
+      </ol>
+      <figure class="shot">
+        <img src="../assets/poexd/screenshot-4.jpg" width="1280" height="800" alt="線上搜尋主控台：左側是各組即時搜尋連線，右側是即時出現的物品結果" loading="lazy">
+        <figcaption>線上搜尋主控台：同時監聽多組即時搜尋。</figcaption>
+      </figure>
+      <div class="note"><p>主控台分頁需要保持開啟才會持續監聽。PoeXD 已避免該分頁被瀏覽器自動捨棄，但電腦休眠時連線仍會中斷，喚醒後會自動重連。</p></div>
+    </section>
+
+    <section id="stat-groups">
+      <h2>常用詞綴群組與搜尋預覽</h2>
+      <p>把常用條件（例如「生命 ＋ 總元素抗性」）存成群組，之後直接疊加到目前的搜尋，不會覆蓋你已經設定好的其他篩選。</p>
+      <h3>建立與套用群組</h3>
+      <ol class="steps">
+        <li>在工具列打開「常用詞綴群組」，新增一個群組並加入想要的詞綴與數值。</li>
+        <li>在任何搜尋頁面點群組即可疊加到目前的篩選；套錯了可以一鍵復原。</li>
+        <li>群組可以用分享碼或備份檔匯入、匯出，方便和朋友交換或換電腦。</li>
+      </ol>
+      <h3>搜尋預覽</h3>
+      <p>從書籤或歷史紀錄開啟搜尋前，可以先預覽它背後的實際條件，在預覽視窗中微調詞綴，或只把其中幾條詞綴疊加到目前的搜尋。</p>
+      <div class="shot-pair">
+        <figure class="shot">
+          <img src="../assets/poexd/screenshot-3.jpg" width="1280" height="800" alt="常用詞綴群組面板" loading="lazy">
+          <figcaption>常用詞綴群組。</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/poexd/screenshot-2.jpg" width="1280" height="800" alt="搜尋預覽視窗，可看到書籤背後的篩選條件並疊加" loading="lazy">
+          <figcaption>搜尋預覽與疊加。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="affix">
+      <h2>詞綴篩選與 T 階</h2>
+      <h3>詞綴選擇器</h3>
+      <ol class="steps">
+        <li>在官方篩選群組旁打開詞綴選擇器，選擇物品類別，並可用「物等」區間篩選。</li>
+        <li>依前綴／後綴瀏覽可出現的詞綴，勾選想要的項目加入「待套用清單」。</li>
+        <li>確認後一次寫入官方篩選器，不用一條一條手動搜尋。</li>
+      </ol>
+      <h3>T 階快捷按鈕</h3>
+      <p>篩選欄旁的 T 階按鈕可以直接選 T1～T10，自動填入該階級的數值範圍。詞綴也可以拖曳排序，或移到其他篩選群組。PoE 2 的碑牌、換界石與範圍珠寶同樣支援。</p>
+      <figure class="shot">
+        <div class="todo">截圖待補：詞綴選擇器視窗（物品類別、前綴／後綴、待套用清單）</div>
+        <figcaption>詞綴選擇器。</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="todo">截圖待補：篩選欄旁的 T 階選單</div>
+        <figcaption>T 階快捷按鈕。</figcaption>
+      </figure>
+    </section>
+
+    <section id="results">
+      <h2>搜尋結果強化</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>功能</th><th>說明</th></tr></thead>
+          <tbody>
+            <tr><td>價格換算與排序</td><td>依 poe.ninja 匯率換算不同通貨的標價，並可依換算後價格排序（僅國際服）。</td></tr>
+            <tr><td>結果詞綴高亮</td><td>標示出符合你篩選條件的詞綴。</td></tr>
+            <tr><td>結果詞綴快篩</td><td>滑鼠移到結果中的詞綴，右側出現「+和／+不」按鈕，可快速加入篩選（只帶入詞綴，不會自動搜尋）。</td></tr>
+            <tr><td>複製 PoB 物品文字</td><td>滑鼠移到結果上，左上角的 PoB 按鈕可一鍵複製英文物品文字，直接貼進 Path of Building；台服與國服頁面會自動轉成英文。</td></tr>
+            <tr><td>PoEDB 連結</td><td>滑鼠移到結果上，左上角的 DB 按鈕可開啟該物品的 PoEDB 頁面。</td></tr>
+            <tr><td>符文覆寫試算（PoE 2）</td><td>試算符文覆寫後的 DPS／防禦，並可依試算結果排序。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="shot">
+        <div class="todo">截圖待補：搜尋結果卡片（換算價格、詞綴高亮、PoB／PoEDB 按鈕）</div>
+        <figcaption>強化後的搜尋結果卡片。</figcaption>
+      </figure>
+    </section>
+
+    <section id="pob">
+      <h2>PoB 購物清單</h2>
+      <ol class="steps">
+        <li>在工具列打開「PoB 購物清單」，貼上 Path of Building 的匯出代碼，或 <code>poe.ninja</code>、<code>pobb.in</code>、<code>pastebin</code> 的分享網址。</li>
+        <li>清單會依裝備欄位與技能分類整理，可同時保留多份 build。</li>
+        <li>在彈出預覽微調條件後，一鍵搜尋、加入書籤，或送進線上搜尋主控台。</li>
+      </ol>
+      <div class="note"><p>從 <code>pobb.in</code>、<code>pastebin</code> 匯入需要另外授權存取該網站。代碼只存在你的瀏覽器，不會上傳。開啟市集漢化並授權 <code>pobb.in</code> 後，<code>pobb.in</code> 分享頁也會自動顯示中文。</p></div>
+      <figure class="shot">
+        <div class="todo">截圖待補：匯入 build 後的 PoB 購物清單</div>
+        <figcaption>PoB 購物清單。</figcaption>
+      </figure>
+    </section>
+
+    <section id="bookmarks">
+      <h2>書籤與歷史紀錄</h2>
+      <ul>
+        <li>用樹狀資料夾收納搜尋，支援拖曳排序、封面圖與滑過預覽。</li>
+        <li>目前頁面對應的書籤會被高亮；也可以用目前的搜尋覆蓋既有書籤。</li>
+        <li>書籤會自動套用目前的伺服器與聯盟，換季不用重建。</li>
+        <li>每次搜尋都會自動記錄在歷史紀錄中。</li>
+        <li>可以與 TFT Trade Extension 互相匯入、匯出書籤，匯入前會先預覽差異。</li>
+      </ul>
+      <figure class="shot">
+        <img src="../assets/poexd/screenshot-1.jpg" width="1280" height="800" alt="樹狀書籤資料夾管理" loading="lazy">
+        <figcaption>樹狀書籤管理。</figcaption>
+      </figure>
+    </section>
+
+    <section id="translation">
+      <h2>市集漢化</h2>
+      <p>把國際服英文市集的介面、篩選器與搜尋結果顯示成中文。只改變顯示，不影響搜尋內容。</p>
+      <ol class="steps">
+        <li>在 PoeXD 設定中把「語言」設為繁體中文（採台服用語）或簡體中文（採國服用語）。</li>
+        <li>打開「市集漢化」（設定頁或點瀏覽器右上角的 PoeXD 圖示都可以）。</li>
+        <li>想同時看到英文原文，可以再打開「中英並列」：詞綴、通貨與物品下拉選單會中英並列，中英文都搜得到。</li>
+        <li>重新整理交易頁面後即會套用。</li>
+      </ol>
+      <figure class="shot">
+        <div class="todo">截圖待補：漢化前後對照</div>
+        <figcaption>國際服市集漢化。</figcaption>
+      </figure>
+    </section>
+
+    <section id="settings">
+      <h2>設定與快捷鍵</h2>
+      <ul>
+        <li>主題、工具列位置、寬度與介面縮放都可以調整。</li>
+        <li>道具名稱與篩選欄支援模糊搜尋（自動加上 <code>~</code>）。</li>
+        <li>可自訂聚焦／清除搜尋欄的快捷鍵：在設定中點快捷鍵欄位後按下想要的按鍵，<kbd>Backspace</kbd> 清除、<kbd>Esc</kbd> 取消。</li>
+        <li>分頁標題可以換成目前搜尋的道具名稱，開很多分頁時比較好找。</li>
+        <li>介面提供繁體中文、簡體中文與英文。</li>
+      </ul>
+      <figure class="shot">
+        <img src="../assets/poexd/screenshot-5.jpg" width="1280" height="800" alt="PoeXD 設定頁" loading="lazy">
+        <figcaption>設定頁。</figcaption>
+      </figure>
+    </section>
+
+    <section id="faq">
+      <h2>常見問題</h2>
+      <details class="faq">
+        <summary>我的資料會被上傳嗎？</summary>
+        <div><p>不會。PoeXD 沒有伺服器，也沒有分析或追蹤程式碼，所有資料都存在你的瀏覽器本機。詳見<a href="https://github.com/yehshune/PoeXD-Extension/blob/main/PRIVACY.md">隱私權政策</a>。</p></div>
+      </details>
+      <details class="faq">
+        <summary>為什麼價格換算沒有出現？</summary>
+        <div><p>價格資料來自 poe.ninja，只提供國際服；台服與國服目前不支援價格換算。</p></div>
+      </details>
+      <details class="faq">
+        <summary>工具列沒有出現怎麼辦？</summary>
+        <div><p>確認目前是官方交易網站，並在擴充功能頁確認 PoeXD 已啟用，然後重新整理頁面。仍然沒有出現的話，歡迎到 GitHub 回報。</p></div>
+      </details>
+      <details class="faq">
+        <summary>哪裡可以看到更新內容、回報問題？</summary>
+        <div><p>更新內容在 <a href="https://github.com/yehshune/PoeXD-Extension/releases">Releases</a>；問題與建議請開 <a href="https://github.com/yehshune/PoeXD-Extension/issues">Issue</a>，安全性問題請依 <a href="https://github.com/yehshune/PoeXD-Extension/blob/main/SECURITY.md">SECURITY.md</a> 私下回報。</p></div>
+      </details>
+      <div class="cta-band" style="margin-top:28px">
+        <div>
+          <h2>覺得好用？</h2>
+          <p>PoeXD 免費且開源，歡迎贊助支持後續開發。</p>
+        </div>
+        <a class="btn primary" href="../support/">前往贊助頁</a>
+      </div>
+    </section>
+  </article>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© yehshune · <a href="https://github.com/yehshune">github.com/yehshune</a></span>
+    <span>PoeXD 為社群維護的非官方工具，與 Grinding Gear Games 或騰訊無隸屬或背書關係。</span>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
