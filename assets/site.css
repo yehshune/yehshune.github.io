@@ -228,7 +228,11 @@ tr:last-child td { border-bottom: 0; }
 
 .note {
   margin: 16px 0; padding: 12px 16px; border-radius: 10px; font-size: 0.9375rem;
-  background: var(--accent-soft); border-left: 4px solid var(--accent);
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+}
+.note::before {
+  content: "提示"; display: block; margin-bottom: 4px;
+  font-size: 0.8125rem; font-weight: 600; color: var(--text);
 }
 .note p { margin: 0; }
 
