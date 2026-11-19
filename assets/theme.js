@@ -1,5 +1,4 @@
-// 在 <head> 同步載入，先套用記住的主題，避免頁面閃一下。
-// 按鈕：<button class="theme-toggle" data-theme-toggle>，點擊在淺色／深色間切換並記住。
+// 在 <head> 同步載入，預設套用深炭黑工坊主題，並支援淺色切換與記住偏好。
 (() => {
   const KEY = 'theme';
   const root = document.documentElement;
@@ -12,25 +11,26 @@
   };
 
   const saved = read();
-  if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+  root.dataset.theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
 
-  const current = () => root.dataset.theme
-    || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const current = () => (root.dataset.theme === 'light' ? 'light' : 'dark');
 
-  const label = (btn) => {
+  const updateLabels = (btn) => {
     const next = current() === 'dark' ? '淺色' : '深色';
     btn.setAttribute('aria-label', `切換為${next}模式`);
+    btn.setAttribute('aria-pressed', String(current() === 'light'));
     btn.title = `切換為${next}模式`;
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
-      label(btn);
+    const buttons = document.querySelectorAll('[data-theme-toggle]');
+    buttons.forEach((btn) => {
+      updateLabels(btn);
       btn.addEventListener('click', () => {
         const next = current() === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
         write(next);
-        label(btn);
+        buttons.forEach(updateLabels);
       });
     });
   });

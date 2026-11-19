@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>yehshune</title>
-<meta name="description" content="shu（yehshune）的作品集：PoeXD Extension 等《流亡黯道》Path of Exile 玩家工具與使用教學。">
-<meta property="og:title" content="yehshune">
-<meta property="og:description" content="《流亡黯道》Path of Exile 玩家工具與使用教學。">
+<title>yehshune — shu 的個人頁面與 PoeXD 玩家工具</title>
+<meta name="description" content="shu（yehshune）的個人主頁與開源專案：專為《流亡黯道》PoE 1／PoE 2 打造的 PoeXD Extension 官方交易市集輔助工具與完整教學。">
+<meta property="og:title" content="yehshune — shu 的個人頁面與 PoeXD 玩家工具">
+<meta property="og:description" content="把《流亡黯道》交易裡的重複步驟，改寫成順手的瀏覽器儀器。">
 <meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
 <link rel="icon" href="assets/poexd/logo-300x300.png">
 <link rel="stylesheet" href="assets/site.css">
@@ -15,104 +15,285 @@
 <body>
 <nav class="nav" aria-label="主要導覽">
   <div class="wrap">
-    <a class="brand" href="./">yeh<span>shune</span></a>
+    <a class="brand" href="./">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M10.4 2h3.2l.6 2.3a7.8 7.8 0 0 1 1.9.8l2-1.3 2.3 2.3-1.3 2a7.8 7.8 0 0 1 .8 1.9L22 10.4v3.2l-2.3.6a7.8 7.8 0 0 1-.8 1.9l1.3 2-2.3 2.3-2-1.3a7.8 7.8 0 0 1-1.9.8l-.6 2.3h-3.2l-.6-2.3a7.8 7.8 0 0 1-1.9-.8l-2 1.3-2.3-2.3 1.3-2a7.8 7.8 0 0 1-.8-1.9L2 13.6v-3.2l2.3-.6a7.8 7.8 0 0 1 .8-1.9l-1.3-2 2.3-2.3 2 1.3a7.8 7.8 0 0 1 1.9-.8L10.4 2ZM12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/>
+      </svg>
+      <span>yehshune</span><span class="sub">// shu</span>
+    </a>
     <ul>
       <li><a class="link" href="#works">作品</a></li>
-      <li><a class="link" href="poexd/">PoeXD 教學</a></li>
-      <li class="hide-sm"><a class="link" href="support/">贊助</a></li>
-      <li class="hide-sm"><a class="link" href="https://github.com/yehshune">GitHub</a></li>
+      <li><a class="link" href="poexd/">教學</a></li>
+      <li><a class="link" href="support/">贊助</a></li>
+      <li class="hide-xs"><a class="link" href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
     </ul>
-    <button type="button" class="theme-toggle" data-theme-toggle aria-label="切換主題">
-      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="切換為淺色模式">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
     </button>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero-stage">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Path of Exile 玩家工具開發者 · 業餘</span>
-      <h1>嗨，我是 shu<br>做讓<em>流亡黯道</em>交易更順手的工具</h1>
-      <p class="lead">玩 PoE 時一直找不到符合自己使用習慣的介面，乾脆自己動手做。業餘時間把交易市集上重複又麻煩的步驟做成瀏覽器擴充套件：集中監看即時搜尋、快速套用詞綴、整理書籤，並把國際服市集翻成中文。</p>
+    <div class="hero-kicker">
+      <span class="meta-code">SHU (YEHSHUNE)</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <span class="meta-code">PATH OF EXILE 玩家工具開發者 · 業餘開源</span>
+    </div>
+
+    <h1>把《流亡黯道》交易裡的<span class="nowrap">重複步驟，</span><br>改寫成順手的<span class="nowrap"><span class="em">瀏覽器儀器</span>。</span></h1>
+
+    <div class="hero-subrow">
+      <p class="lead">玩 <span class="nowrap">PoE 1／PoE 2</span> 時一直找不到合手的交易市集輔助介面，乾脆自己動手寫。業餘時間維護開源擴充套件，把即時搜尋監看、詞綴 T 階快選、<span class="nowrap">PoB 裝備</span>比對與國際服繁簡漢化收進同一個側邊工作台。</p>
       <div class="actions">
-        <a class="btn primary" href="#works">看作品</a>
-        <a class="btn" href="https://github.com/yehshune">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
+        <a class="btn primary" href="poexd/">查看 PoeXD 使用教學 →</a>
+        <a class="btn" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg" target="_blank" rel="noopener noreferrer">Chrome 安裝 ↗</a>
+        <a class="btn ghost" href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </div>
-    <img class="avatar" src="assets/poexd/logo-300x300.png" width="300" height="300" alt="PoeXD 標誌">
+
+    <div class="workbench" data-workbench>
+      <div class="workbench-bar">
+        <div class="tab-strip" role="tablist" aria-label="PoeXD 實機模組預覽">
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="true"
+            data-tab="live"
+            data-src="assets/poexd/live-search.jpg"
+            data-alt="PoeXD 線上搜尋主控台：單一分頁同時監聽多組即時搜尋連線與速率狀態"
+            data-status="LIVE CONSOLE · PoE 1 / PoE 2"
+            data-kicker="01 / REAL-TIME MONITOR"
+            data-title="線上搜尋主控台"
+            data-desc="把分散在十幾個分頁的 Live Search 收進同一個主控台，依書籤資料夾批次啟停，並提供斷線自動重連與重啟恢復。"
+            data-meta="依資料夾批次啟停與音效提示|即時監測官方 API 速率上限|瀏覽器重啟後可一鍵恢復連線"
+            data-href="poexd/#live-search">
+            <span class="idx">01</span>搜尋主控台
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="affix"
+            data-src="assets/poexd/affix.jpg"
+            data-alt="PoeXD 詞綴選擇器：依物品類別與物等篩選前綴與後綴，一次套用至官方篩選欄"
+            data-status="AFFIX PICKER · T1–T11"
+            data-kicker="02 / AFFIX &amp; TIERS"
+            data-title="詞綴選擇與 T 階"
+            data-desc="依物品基底與物等區間列出可出現的前／後綴，勾選待套用清單一次寫入官方篩選欄，並在旁直接切換 T1–T11 階級數值。"
+            data-meta="支援前綴／後綴與詞綴分組切換|篩選欄旁一鍵帶入 T 階數值範圍|支援 PoE 2 碑牌、換界石與範圍珠寶"
+            data-href="poexd/#affix">
+            <span class="idx">02</span>詞綴選擇器
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="preview"
+            data-src="assets/poexd/search-preview.jpg"
+            data-alt="PoeXD 搜尋預覽視窗：微調書籤背後的基底與詞綴條件後疊加到當前搜尋"
+            data-status="SEARCH PREVIEW · 書籤疊加"
+            data-kicker="03 / BOOKMARK OVERLAY"
+            data-title="搜尋預覽與群組疊加"
+            data-desc="點書籤名稱先打開預覽視窗檢視完整條件，可先微調數值或只勾選單幾條詞綴疊加到目前搜尋，不覆蓋已設好的篩選。"
+            data-meta="支援常用詞綴群組單步復原|書籤自動套用目前伺服器與聯盟|支援與 TFT Trade 雙向匯入匯出"
+            data-href="poexd/#stat-groups">
+            <span class="idx">03</span>搜尋預覽
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="translate"
+            data-src="assets/poexd/translate-zh.jpg"
+            data-alt="PoeXD 國際服市集漢化與結果強化：顯示台服中文詞綴、P/S 階級、通貨折算與 PoB 複製鈕"
+            data-status="LOCALIZATION · 繁／簡／雙語"
+            data-kicker="04 / TRADE LOCALIZATION"
+            data-title="市集漢化與結果強化"
+            data-desc="僅轉換畫面顯示、不更動查詢參數，支援台／國服用語與中英並列；卡片同時補上 poe.ninja 匯率折算、詞綴快篩與複製 PoB。"
+            data-meta="支援繁體中文、簡體中文與中英並列|依 poe.ninja 匯率折算並排序標價|一鍵複製英文物品文字貼進 PoB"
+            data-href="poexd/#translation">
+            <span class="idx">04</span>漢化與估價
+          </button>
+        </div>
+        <div class="workbench-status">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-wb-status>LIVE CONSOLE · PoE 1 / PoE 2</span>
+        </div>
+      </div>
+
+      <div class="workbench-body">
+        <div class="workbench-viewport">
+          <img data-wb-img src="assets/poexd/live-search.jpg" width="1040" height="360" alt="PoeXD 線上搜尋主控台：單一分頁同時監聽多組即時搜尋連線與速率狀態">
+        </div>
+        <aside class="workbench-aside" aria-live="polite">
+          <div>
+            <span class="meta-code" data-wb-kicker>01 / REAL-TIME MONITOR</span>
+            <h2 data-wb-title>線上搜尋主控台</h2>
+            <p data-wb-desc>把分散在十幾個分頁的 Live Search 收進同一個主控台，依書籤資料夾批次啟停，並提供斷線自動重連與重啟恢復。</p>
+            <ul class="workbench-meta" data-wb-meta>
+              <li>依資料夾批次啟停與音效提示</li>
+              <li>即時監測官方 API 速率上限</li>
+              <li>瀏覽器重啟後可一鍵恢復連線</li>
+            </ul>
+          </div>
+          <a class="workbench-link" data-wb-link href="poexd/#live-search">閱讀此功能教學 →</a>
+        </aside>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
-  <section class="block" id="works">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>作品</h2>
-        <p>業餘時間做的專案。</p>
+  <section class="band workflow-section" id="workflow">
+    <div class="wrap narrative-pin">
+      <div class="section-head">
+        <div>
+          <span class="meta-code">WORKFLOW TRANSFORMATION</span>
+          <h2>同一筆市集物品，從原文查表到一鍵判讀</h2>
+        </div>
+        <a class="skip-narrative" href="#works">跳過流程展示 ↓</a>
       </div>
 
-      <article class="project reveal">
-        <div class="media">
-          <img src="assets/poexd/promo-marquee-1400x560.png" width="1400" height="560" alt="PoeXD Extension 宣傳圖：Path of Exile 官方交易市集輔助擴充套件">
+      <div class="narrative-layout">
+        <div class="narrative-steps" role="group" aria-label="市集處理階段">
+          <span class="narrative-rail" aria-hidden="true"></span>
+          <button type="button" class="n-step is-active">
+            <span class="meta-code">01 / BEFORE</span>
+            <h3>國際服原文市集，開多頁又得對照詞綴</h3>
+            <p>原廠市集畫面只有英文詞條與單一通貨標價，同時追多件裝備得開一排瀏覽器分頁，還容易遇到即時搜尋斷線。</p>
+          </button>
+          <button type="button" class="n-step">
+            <span class="meta-code">02 / LOCALIZE &amp; TIER</span>
+            <h3>就地漢化、標出 P/S 階級與通貨換算</h3>
+            <p>開啟 PoeXD 後直接在結果卡標出台服用語、前後綴 T 階、高階詞綴高亮，以及依 poe.ninja 匯率折算後的等值價格。</p>
+          </button>
+          <button type="button" class="n-step">
+            <span class="meta-code">03 / LIVE CONSOLE</span>
+            <h3>所有即時搜尋收斂進單一監看主控台</h3>
+            <p>把書籤資料夾內的查詢送進主控台統一監聽與重連，省下切換分頁的時間，不漏接剛上架的目標裝備。</p>
+          </button>
         </div>
-        <div class="body">
-          <h3>PoeXD Extension</h3>
-          <p>《流亡黯道》PoE 1／PoE 2 官方交易市集的輔助擴充套件，已上架 Chrome Web Store 與 Edge 附加元件。</p>
-          <ul class="tags" aria-label="技術">
-            <li>TypeScript</li><li>Vue 3</li><li>WXT</li><li>Tailwind CSS</li><li>Vitest</li><li>Playwright</li>
-          </ul>
-          <ul class="points">
-            <li>線上搜尋主控台：一個分頁監看多組即時搜尋，斷線自動重連</li>
-            <li>常用詞綴群組、T 階快捷與詞綴選擇器，少點好幾層選單</li>
-            <li>PoB 購物清單：貼上 build 代碼就能逐件搜尋</li>
-            <li>國際服市集繁簡漢化，書籤與歷史紀錄集中管理</li>
-          </ul>
-          <div class="actions">
-            <a class="btn primary" href="poexd/">使用教學</a>
-            <a class="btn" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg">Chrome 安裝</a>
-            <a class="btn" href="https://github.com/yehshune/PoeXD-Extension">原始碼</a>
+
+        <div class="narrative-stage">
+          <div class="transform-frame">
+            <img src="assets/poexd/translate-en.jpg" width="630" height="345" alt="漢化前：國際服英文裝備搜尋結果卡片">
+            <div class="transform-layer-after">
+              <img src="assets/poexd/translate-zh.jpg" width="630" height="360" alt="漢化後：台服用語中文詞綴、P2/S1 階級與通貨匯率換算">
+            </div>
+            <span class="transform-divider" aria-hidden="true"></span>
+            <img class="transform-layer-console" src="assets/poexd/live-search.jpg" width="1040" height="360" alt="線上搜尋主控台：左側連線列表與右側即時進件結果">
+          </div>
+          <div class="narrative-caption">
+            <span data-narrative-phase>PHASE 01 / 國際服原文市集畫面</span>
+            <span>向下捲動或點選左側步驟切換實景</span>
           </div>
         </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="block" id="about-poexd">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>關於 PoeXD</h2>
-      </div>
-      <div class="cards reveal">
-        <div class="card">
-          <h3>資料存在本機</h3>
-          <p>PoeXD 不需要帳號，也沒有自己的伺服器或分析追蹤；設定與書籤都存在瀏覽器裡。</p>
-        </div>
-        <div class="card">
-          <h3>MIT 授權開源</h3>
-          <p>原始碼放在 GitHub，可以自由檢查與使用，也歡迎回報問題。</p>
-        </div>
-        <div class="card">
-          <h3>持續更新</h3>
-          <p>遊戲改版或交易網站調整時會更新詞綴資料與功能，內容寫在 Releases。</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="support">
+  <section class="band js-section-enter" id="works">
     <div class="wrap">
-      <div class="cta-band reveal">
+      <div class="section-head">
         <div>
-          <h2>覺得好用？</h2>
-          <p>歡迎到 GitHub 點顆星，或透過贊助頁支持後續開發。</p>
+          <span class="meta-code">01 / FLAGSHIP PROJECT</span>
+          <h2>代表作品：PoeXD Extension</h2>
+        </div>
+        <p class="head-side">已上架 Chrome Web Store 與 Microsoft Edge 附加元件，直接長在官方交易網站旁而不另設外部拍賣頁。</p>
+      </div>
+
+      <div class="dossier">
+        <div>
+          <h3 class="dossier-title">模組化設計、本機儲存與跨工具整合規格</h3>
+          <p class="dossier-lead">不想被強迫接受一整包肥大套件，因此把每個功能拆成可獨立開關的模組；側邊工作台可停靠左側或右側，並自訂介面縮放比例與聚焦快捷鍵。</p>
+
+          <ul class="spec-list">
+            <li><span class="k">支援範圍</span><span class="v">同時支援 <span class="nowrap">PoE 1／PoE 2</span> 官方交易網站，涵蓋國際服、台服與國服；介面提供繁中、簡中與英文。</span></li>
+            <li><span class="k">跨工具互通</span><span class="v">支援匯入 <span class="nowrap">Path of Building</span> 代碼、<code>poe.ninja</code>／<code>pobb.in</code>／<code>pastebin</code> 網址，並可與 TFT Trade 互相匯入匯出書籤。</span></li>
+            <li><span class="k">安裝與發布</span><span class="v">商店版會隨更新自動推播，亦可於 GitHub Releases 下載 <code>chromium.zip</code> 手動載入未封裝版本。</span></li>
+            <li><span class="k">程式架構</span><span class="v">以 WXT 建置瀏覽器擴充架構，搭配 Vue 3 與 TypeScript 開發，並以 Vitest 與 Playwright 覆蓋測試。</span></li>
+          </ul>
+
+          <p class="stack-line"><strong>TECH STACK</strong>TypeScript · Vue 3 · WXT · Tailwind CSS · Vitest · Playwright</p>
+
+          <div class="actions">
+            <a class="btn primary" href="poexd/">完整教學 →</a>
+            <a class="btn" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg" target="_blank" rel="noopener noreferrer">Chrome 商店 ↗</a>
+            <a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hnnpgpcnmgjbmmhgogcljbnfoklblgmb" target="_blank" rel="noopener noreferrer">Edge 附加元件 ↗</a>
+            <a class="btn ghost" href="https://github.com/yehshune/PoeXD-Extension" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="companion-grid">
+          <figure class="companion-fig">
+            <img src="assets/poexd/popup.jpg" width="300" height="598" alt="PoeXD 擴充套件彈出控制面板，列出十項可獨立開關的功能模組">
+            <figcaption>十項功能模組可依個人習慣獨立開關。</figcaption>
+          </figure>
+          <figure class="companion-fig">
+            <img src="assets/poexd/pob.jpg" width="338" height="640" alt="PoeXD PoB 購物清單側欄：依武器、護甲、飾品欄位列出配裝清單">
+            <figcaption>匯入 PoB build 後依欄位逐件追蹤裝備。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band js-section-enter" id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="meta-code">DESIGN &amp; PRIVACY STANDARDS</span>
+          <h2>做這個工具的三條底線</h2>
+        </div>
+      </div>
+
+      <div class="principles-grid">
+        <article class="principle">
+          <span class="meta-code">01 / LOCAL-FIRST</span>
+          <h3>資料留在自己的瀏覽器</h3>
+          <p>不需要註冊帳號，也沒有自建後端伺服器、分析統計或追蹤腳本；書籤、詞綴群組、PoB 清單與快捷鍵設定全都只存在本機瀏覽器裡。</p>
+        </article>
+        <article class="principle">
+          <span class="meta-code">02 / MIT OPEN SOURCE</span>
+          <h3>MIT 授權完整開源</h3>
+          <p>擴充套件原始碼與詞綴資料處理程式公開在 GitHub，任何人都能檢查權限請求與程式碼行為，也歡迎提交 Issue 回報異常或討論需求。</p>
+        </article>
+        <article class="principle">
+          <span class="meta-code">03 / SEASONAL UPDATES</span>
+          <h3>隨遊戲賽季與市集改版更新</h3>
+          <p>每逢 PoE 1 或 PoE 2 改版、新詞綴實裝或官方交易網站調整版面時同步維護，詳細變更內容都會整理在 GitHub Releases。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band js-section-enter" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="emblem-frame">
+          <img src="assets/poexd/logo-300x300.png" width="300" height="300" alt="PoeXD 藍色齒輪 P 字標誌">
+        </div>
+        <div class="about-copy">
+          <span class="meta-code">ABOUT THE AUTHOR</span>
+          <h2>嗨，我是 shu（yehshune）</h2>
+          <p>平常喜歡研究《流亡黯道》的配裝與市集交易效率，業餘時間自己寫網頁與瀏覽器擴充工具。這座網站收錄我在 GitHub 維護的開源專案、詳細圖文手冊，以及透明的開發支持管道。</p>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h3>PoeXD 幫你省下查詞與切頁的時間了嗎？</h3>
+          <p>專案免費且完全開源，你可以到 GitHub 點顆星、開 Issue 回報想法，或前往贊助頁請我喝杯咖啡。</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="support/">前往贊助頁</a>
-          <a class="btn" href="https://github.com/yehshune/PoeXD-Extension/issues">回報問題</a>
+          <a class="btn primary" href="support/">前往贊助支持 →</a>
+          <a class="btn" href="https://github.com/yehshune/PoeXD-Extension/issues" target="_blank" rel="noopener noreferrer">回報問題 ↗</a>
         </div>
       </div>
     </div>
@@ -121,11 +302,13 @@
 
 <footer class="site">
   <div class="wrap">
-    <span>© yehshune · <a href="https://github.com/yehshune">github.com/yehshune</a></span>
-    <span>Path of Exile 為 Grinding Gear Games 的商標；本站工具為非官方社群作品。</span>
+    <span>© yehshune · <a href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">github.com/yehshune ↗</a></span>
+    <span>Path of Exile 為 Grinding Gear Games 之商標；本站工具為非官方社群作品。</span>
   </div>
 </footer>
 
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="assets/site.js" defer></script>
 </body>
 </html>
