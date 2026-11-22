@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PoeXD Extension 使用教學 — yehshune</title>
-<meta name="description" content="PoeXD Extension 完整使用教學：安裝、線上搜尋主控台、常用詞綴群組、詞綴篩選與 T 階、PoB 購物清單、書籤管理與市集漢化。">
+<meta name="description" content="PoeXD Extension 完整使用教學：安裝、線上搜尋主控台、搜尋結果看板、釘選物品、常用詞綴群組、詞綴篩選與 T 階、PoB 購物清單、書籤管理、11 款外觀主題與市集漢化。">
 <meta property="og:title" content="PoeXD Extension 使用教學">
 <meta property="og:description" content="Path of Exile 官方交易市集輔助擴充套件的完整使用說明。">
 <meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
@@ -65,12 +65,12 @@
         <span class="meta-code">03 / LIVE SEARCH</span>
         <strong>線上搜尋主控台</strong>
       </a>
-      <a href="#affix">
-        <span class="meta-code">05 / AFFIX &amp; POB</span>
-        <strong>詞綴選擇與 T 階</strong>
+      <a href="#result-board">
+        <span class="meta-code">07 / RESULT BOARD</span>
+        <strong>搜尋結果看板</strong>
       </a>
       <a href="#translation">
-        <span class="meta-code">09 / LOCALIZE</span>
+        <span class="meta-code">11 / LOCALIZE</span>
         <strong>國際服市集漢化</strong>
       </a>
     </div>
@@ -81,7 +81,7 @@
   <nav class="toc" aria-label="本頁目錄">
     <div class="toc-head">
       <span>MANUAL INDEX</span>
-      <span>11 節</span>
+      <span>13 節</span>
     </div>
     <div class="toc-progress" aria-hidden="true"><div class="toc-progress-bar" id="toc-progress-bar"></div></div>
     <ol>
@@ -91,11 +91,13 @@
       <li><a href="#stat-groups"><span class="num">04</span>常用詞綴與預覽</a></li>
       <li><a href="#affix"><span class="num">05</span>詞綴篩選與 T 階</a></li>
       <li><a href="#results"><span class="num">06</span>搜尋結果強化</a></li>
-      <li><a href="#pob"><span class="num">07</span>PoB 購物清單</a></li>
-      <li><a href="#bookmarks"><span class="num">08</span>書籤與歷史紀錄</a></li>
-      <li><a href="#translation"><span class="num">09</span>市集漢化</a></li>
-      <li><a href="#settings"><span class="num">10</span>設定與快捷鍵</a></li>
-      <li><a href="#faq"><span class="num">11</span>常見問題</a></li>
+      <li><a href="#result-board"><span class="num">07</span>搜尋結果看板</a></li>
+      <li><a href="#pinned"><span class="num">08</span>釘選物品</a></li>
+      <li><a href="#pob"><span class="num">09</span>PoB 購物清單</a></li>
+      <li><a href="#bookmarks"><span class="num">10</span>書籤與歷史紀錄</a></li>
+      <li><a href="#translation"><span class="num">11</span>市集漢化</a></li>
+      <li><a href="#settings"><span class="num">12</span>設定與外觀主題</a></li>
+      <li><a href="#faq"><span class="num">13</span>常見問題</a></li>
     </ol>
   </nav>
 
@@ -140,9 +142,9 @@
       <div class="split-doc">
         <div>
           <ol class="steps">
-            <li>開啟 <a href="https://www.pathofexile.com/trade" target="_blank" rel="noopener noreferrer">官方交易網站 ↗</a>（台服、國服也支援），頁面左側會出現 PoeXD 側邊工具列（可在設定的「面板位置」改到右側）；收合時只會留下一個 PoeXD 標誌。</li>
-            <li>工具列的分頁分別對應書籤、歷史紀錄、常用詞綴群組、PoB 購物清單與線上搜尋主控台；點分頁即可切換。</li>
-            <li>點瀏覽器右上角的 PoeXD 圖示，可個別開關十項功能模組（T 階快捷按鈕、詞綴選擇器、價格換算、市集漢化等）。</li>
+            <li>開啟 <a href="https://www.pathofexile.com/trade" target="_blank" rel="noopener noreferrer">官方交易網站 ↗</a>（台服、國服也支援），頁面左側會出現 PoeXD 側邊工具列（可在設定的「面板位置」改到右側）；收合時只會留下一個可上下拖曳的 PoeXD 標誌。</li>
+            <li>首次安裝展開側邊欄會自動開始導覽；工具列的分頁分別對應書籤、歷史紀錄、常用詞綴群組、PoB 購物清單、釘選物品、搜尋結果看板與線上搜尋主控台。</li>
+            <li>在交易頁點擊瀏覽器右上角的 PoeXD 圖示可直接切換顯示／收合側邊欄；各項功能模組可在側邊欄的「系統設定 → 側邊欄模組」中個別開關（非交易頁點擊圖示則提供各服市集快速連結）。</li>
           </ol>
           <figure class="shot">
             <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/collapsed.jpg" data-lightbox-alt="交易網站左側縮起的 PoeXD 標誌按鈕" data-lightbox-caption="工具列收合時僅保留側邊標誌按鈕，點擊即可展開。">
@@ -153,10 +155,10 @@
         </div>
 
         <figure class="shot" style="margin:0">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/popup.jpg" data-lightbox-alt="PoeXD 模組開關面板，列出 T 階快捷按鈕、詞綴選擇器、價格換算、市集漢化等開關" data-lightbox-caption="點瀏覽器右上角的 PoeXD 擴充套件圖示，可個別開關功能模組。">
-            <img src="../assets/poexd/popup.jpg" width="300" height="598" alt="PoeXD 模組開關面板，列出 T 階快捷按鈕、詞綴選擇器、價格換算、市集漢化等開關">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/settings.jpg" data-lightbox-alt="PoeXD 系統設定頁，可透過分類導覽或搜尋快速調整市集漢化、外觀主題與功能模組開關" data-lightbox-caption="在側邊欄「系統設定」可搜尋設定並個別開關功能模組。">
+            <img src="../assets/poexd/settings.jpg" width="442" height="740" alt="PoeXD 系統設定頁，可透過分類導覽或搜尋快速調整市集漢化、外觀主題與功能模組開關">
           </button>
-          <figcaption><span>點擴充套件圖示可個別開關功能模組。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>在側邊欄「系統設定」可個別開關功能模組。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
       </div>
     </section>
@@ -164,12 +166,12 @@
     <section id="live-search">
       <span class="meta-code sec-num">03 / LIVE SEARCH CONSOLE</span>
       <h2>線上搜尋主控台</h2>
-      <p>在單一分頁集中監聽多組即時搜尋（Live Search），斷線自動重連，有新物品上架時即時顯示並可播放提示音。</p>
+      <p>在單一分頁集中監聽多組即時搜尋（Live Search），斷線自動重連，有新物品上架時即時顯示，並支援官方提示音與背景桌面通知。</p>
       <ol class="steps">
         <li>開啟線上搜尋主控台，可「從書籤挑選」要監聽的搜尋，或「輸入搜尋網址」直接貼上交易網站的搜尋連結。</li>
-        <li>連線會依書籤資料夾分組，可批次啟用或停止；點選單一連線則能只看該組結果。</li>
-        <li>主控台會即時顯示官方 API 速率狀態，避免監聽太多組而被暫時限制連線。</li>
-        <li>關掉瀏覽器再打開時，可一鍵恢復上次的連線組合。</li>
+        <li>連線會依書籤資料夾分組並顯示命中數，可批次啟用或停止；每筆結果卡片會標示來源連線，點擊來源標籤或單一連線就能只看該組結果，也能一鍵清空結果區而不中斷監聽。</li>
+        <li>在主控台設定可直接調整官方通知音效、音量或上傳自訂音效檔（上限 1 MB），並可開啟「背景桌面通知」（每個監聽項目獨立一張通知卡，短時間多筆自動合併，點擊即可切回主控台）。</li>
+        <li>主控台會即時顯示官方 API 速率狀態，避免監聽太多組而被暫時限制連線；重開瀏覽器可一鍵恢復上次的連線組合。</li>
       </ol>
       <figure class="shot">
         <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/live-search.jpg" data-lightbox-alt="線上搜尋主控台：左側是各組即時搜尋連線，右側是即時出現的物品結果" data-lightbox-caption="線上搜尋主控台：左側管理多組連線與速率，右側集中瀏覽新上架道具。">
@@ -189,7 +191,7 @@
       <ol class="steps">
         <li>在工具列打開「常用詞綴群組」，新增群組並加入需要的詞綴與數值門檻。</li>
         <li>在任何搜尋頁面點選群組即可疊加到目前篩選；套錯了可以一鍵復原。</li>
-        <li>群組支援分享碼與備份檔匯入、匯出，方便與朋友交換或換電腦時遷移。</li>
+        <li>群組支援原地重新命名、分享碼與備份檔匯入／匯出（匯入前提供勾選預覽），方便與朋友交換或換電腦時遷移。</li>
       </ol>
       <figure class="shot">
         <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/stat-groups.jpg" data-lightbox-alt="常用詞綴群組面板，右側篩選器已疊加總抗性群組" data-lightbox-caption="常用詞綴群組：左邊點「疊加套用」，右側官方篩選器立即多出整組條件。">
@@ -213,20 +215,20 @@
       <h2>詞綴篩選與 T 階</h2>
       <h3>詞綴選擇器</h3>
       <ol class="steps">
-        <li>在官方篩選群組旁打開詞綴選擇器，選擇物品類別，並可用「物等」區間過濾可出現詞綴。</li>
-        <li>依前綴／後綴與詞綴分類瀏覽，勾選想要的項目加入右側「待套用清單」。</li>
+        <li>在官方篩選群組旁打開詞綴選擇器，從標題列切換物品類別（含「最近使用」，並可同步套用到官方物品種類），也能用「物等」區間過濾可出現詞綴。</li>
+        <li>依前綴／後綴與詞綴來源分類瀏覽（支援全部展開／收合與全選符合項目），勾選想要的項目加入右側「待套用清單」。</li>
         <li>確認後一次批次寫入官方篩選器，不必一條一條手動輸入關鍵字。</li>
       </ol>
 
       <h3>T 階快捷按鈕</h3>
-      <p>篩選欄旁的 <code>T</code> 按鈕可直接選擇階級，自動帶入該階級數值範圍；同一詞綴在該物品類別有多種來源時，可在左側切換詞綴分組。詞綴亦支援拖曳排序或移至其他篩選群組。<span class="nowrap">PoE 2</span> 的碑牌、換界石與範圍珠寶同樣支援。</p>
+      <p>篩選欄旁的 <code>T</code> 按鈕可直接點擊單一階級或複選階級範圍、點數值快速填入；同一詞綴在該物品類別有多種來源時，可在左側切換詞綴分組。支援 <span class="nowrap">PoE 1</span> 追憶、穿越、糾纏與異界固定詞，以及 <span class="nowrap">PoE 2</span> 的碑牌、換界石、範圍珠寶與聖域詞綴；詞綴亦可拖曳排序或移至其他篩選群組。</p>
 
       <div class="shot-pair is-landscape">
         <figure class="shot">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/affix.jpg" data-lightbox-alt="詞綴選擇器：左側分類，中間是前綴與後綴清單，右側是待套用清單" data-lightbox-caption="詞綴選擇器：依物品類別與物等瀏覽前綴／後綴並批次套用。">
-            <img src="../assets/poexd/affix.jpg" width="800" height="543" alt="詞綴選擇器：左側分類，中間是前綴與後綴清單，右側是待套用清單">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/affix.jpg" data-lightbox-alt="詞綴選擇器：標題列可切換物品類別，左側分類，中間是前綴與後綴清單，右側是待套用清單" data-lightbox-caption="詞綴選擇器：依物品類別與物等瀏覽前綴／後綴並批次套用。">
+            <img src="../assets/poexd/affix.jpg" width="1522" height="1076" alt="詞綴選擇器：標題列可切換物品類別，左側分類，中間是前綴與後綴清單，右側是待套用清單">
           </button>
-          <figcaption><span>詞綴選擇器。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>詞綴選擇器（支援標題列類別切換與最新詞綴來源）。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
         <figure class="shot">
           <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/tier.jpg" data-lightbox-alt="胸甲的「+# 最大生命」T 階選單：左側可切換四種詞綴分組，右側列出 T1 到 T11 的數值範圍" data-lightbox-caption="T 階選單：同一個詞綴有多種來源時（例如胸甲生命），左側可切換分組。">
@@ -261,13 +263,61 @@
       </figure>
     </section>
 
+    <section id="result-board">
+      <span class="meta-code sec-num">07 / RESULT BOARD</span>
+      <h2>搜尋結果看板</h2>
+      <p>在一般搜尋頁把目前取得的結果集中到側邊欄（從側邊欄分頁或官方結果數旁的「看板」按鈕開啟），不會改動官方結果列表。</p>
+      <ol class="steps">
+        <li><strong>物品清單</strong>：依關鍵字、價格區間、隱藏已售出與只看可直購篩選並排序，點一下即可捲動定位並高亮官方結果列；可直接前往藏身處或釘選。</li>
+        <li><strong>賣家清單與倉庫分組</strong>：依可直購件數與換算總價排序，找出能在同一間藏身處一次買齊多件的賣家，並依倉庫分頁分組標出格位座標。</li>
+        <li><strong>倉庫搜尋 regex</strong>：勾選同一賣家要買的物品後顯示小計，一鍵複製 <code>regex</code> 貼進對方倉庫搜尋框，同時標出所有目標物品（無法區分時會提示警告）。</li>
+        <li><strong>批次載入與自動重整</strong>：透過官方「載入更多」逐批（可記憶每次筆數）或一次載入全部（上限 100 筆）；前往藏身處連結過期時會自動重新整理再前往。</li>
+      </ol>
+      <div class="shot-pair is-portrait">
+        <figure class="shot">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/result-board-items.jpg" data-lightbox-alt="搜尋結果看板的物品清單：列出本次搜尋取得的物品、換算價格與篩選排序控制" data-lightbox-caption="搜尋結果看板（物品清單）：集中篩選、排序並一鍵定位到官方結果列。">
+            <img src="../assets/poexd/result-board-items.jpg" width="442" height="740" alt="搜尋結果看板的物品清單：列出本次搜尋取得的物品、換算價格與篩選排序控制">
+          </button>
+          <figcaption><span>物品清單：集中篩選價格區間與批次載入。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/result-board-sellers.jpg" data-lightbox-alt="搜尋結果看板的賣家清單：展開同一賣家的多件可直購物品，依倉庫分組並產生倉庫搜尋 regex" data-lightbox-caption="搜尋結果看板（賣家清單）：依倉庫分組並一鍵複製倉庫搜尋 regex 一次買齊。">
+            <img src="../assets/poexd/result-board-sellers.jpg" width="442" height="740" alt="搜尋結果看板的賣家清單：展開同一賣家的多件可直購物品，依倉庫分組並產生倉庫搜尋 regex">
+          </button>
+          <figcaption><span>賣家清單：倉庫分組與一鍵複製倉庫搜尋 regex。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+        </figure>
+      </div>
+      <div class="note"><p>搜尋結果看板不保存歷史資料，換成下一個搜尋就會重新整理；想長期保留下來慢慢比價的裝備請使用「釘選物品」。</p></div>
+    </section>
+
+    <section id="pinned">
+      <span class="meta-code sec-num">08 / PINNED ITEMS</span>
+      <h2>釘選物品</h2>
+      <div class="split-doc">
+        <div>
+          <ul>
+            <li>滑鼠移到搜尋結果卡片左上角點釘選，就能把物品連同標價、金幣手續費、賣家與上架時間存到側邊欄，以官方樣式卡片隨時展開比價。</li>
+            <li>一般搜尋、即時搜尋與線上搜尋主控台皆可使用，並支援切換「顯示所有聯盟」。</li>
+            <li>支援搜尋篩選、排序（自訂順序、最新釘選、價格高低）、拖曳調整順序或拖出取消釘選。</li>
+            <li>一口價物品可直接點擊前往藏身處，已賣出的物品會標示「已售出」；每個遊戲版本最多保存 50 筆於本機瀏覽器。</li>
+          </ul>
+        </div>
+        <figure class="shot" style="margin:0">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/pinned-items.jpg" data-lightbox-alt="釘選物品面板：展開官方樣式卡片顯示詞綴與金幣手續費，下方物品可顯示已售出狀態" data-lightbox-caption="釘選物品：以官方樣式卡片回頭比價，顯示手續費、已售出標記與前往藏身處按鈕。">
+            <img src="../assets/poexd/pinned-items.jpg" width="442" height="740" alt="釘選物品面板：展開官方樣式卡片顯示詞綴與金幣手續費，下方物品可顯示已售出狀態">
+          </button>
+          <figcaption><span>釘選物品：官方樣式卡片比價與已售出標記。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="pob">
-      <span class="meta-code sec-num">07 / POB SHOPPING LIST</span>
+      <span class="meta-code sec-num">09 / POB SHOPPING LIST</span>
       <h2>PoB 購物清單</h2>
       <ol class="steps">
         <li>在工具列打開「PoB 購物清單」，貼上 <span class="nowrap">Path of Building</span> 匯出代碼，或 <code>poe.ninja</code>、<code>pobb.in</code>、<code>pastebin</code> 分享網址。</li>
-        <li>清單會依裝備欄位與技能寶石分組整理，可同時保存多份 build；若 build 含多組裝備套裝或技能組，可從上方選單即時切換。</li>
-        <li>在彈出預覽微調條件後，一鍵搜尋、加入書籤或直接送進線上搜尋主控台。</li>
+        <li>清單會依裝備、藥劑、珠寶與寶石分類整理，可同時保存多份 build；若 build 含多組裝備套裝或技能組，可從上方選單即時切換。</li>
+        <li>在彈出預覽可一鍵「改用總和詞綴」（抗性、生命、能力值）或將數值條件放寬 10%（<code>-10%</code>），微調後一鍵搜尋、加入書籤或直接送進線上搜尋主控台。</li>
       </ol>
       <div class="note"><p>從 <code>pobb.in</code>、<code>pastebin</code> 匯入需要另外授權存取該網站。代碼只存在你的瀏覽器，不會上傳。開啟市集漢化並授權 <code>pobb.in</code> 後，<code>pobb.in</code> 分享頁也會自動顯示中文。</p></div>
 
@@ -288,7 +338,7 @@
     </section>
 
     <section id="bookmarks">
-      <span class="meta-code sec-num">08 / BOOKMARKS &amp; HISTORY</span>
+      <span class="meta-code sec-num">10 / BOOKMARKS &amp; HISTORY</span>
       <h2>書籤與歷史紀錄</h2>
       <div class="split-doc">
         <div>
@@ -311,14 +361,13 @@
     </section>
 
     <section id="translation">
-      <span class="meta-code sec-num">09 / TRADE LOCALIZATION</span>
+      <span class="meta-code sec-num">11 / TRADE LOCALIZATION</span>
       <h2>市集漢化</h2>
-      <p>把國際服英文市集的介面、篩選器與搜尋結果顯示成中文。僅改變畫面顯示，不會更動實際送出的搜尋內容。</p>
+      <p>把國際服英文市集的介面、篩選器、提示訊息與搜尋結果顯示成中文。僅改變畫面顯示，不會更動實際送出的搜尋內容。</p>
       <ol class="steps">
-        <li>在 PoeXD 設定中把「語言」設為繁體中文（採台服用語）或簡體中文（採國服用語）。</li>
-        <li>開啟「市集漢化」（於設定頁或點瀏覽器右上角 PoeXD 圖示皆可）。</li>
-        <li>想同時看到英文原文時可再打開「中英並列」：詞綴、通貨與物品下拉選單會並列顯示，打中文或英文都搜得到。</li>
-        <li>重新整理交易頁面後即會套用。</li>
+        <li>在 PoeXD 設定的「語言與市集漢化」中，把語言設為繁體中文（採台服用語）或簡體中文（採國服用語）。</li>
+        <li>開啟「市集漢化」，重新整理交易頁面即會套用；新賽季或遊戲改版時可在設定點「立即更新」手動重新抓取最新漢化資料。</li>
+        <li>想同時看到英文原文時，可開啟「篩選下拉選單」中英並列（打中文或英文都搜得到），以及「搜尋結果詞綴」在翻譯詞綴下方附上淡色英文原文。</li>
       </ol>
 
       <div class="compare-stage" data-compare>
@@ -370,30 +419,33 @@
     </section>
 
     <section id="settings">
-      <span class="meta-code sec-num">10 / SETTINGS &amp; SHORTCUTS</span>
-      <h2>設定與快捷鍵</h2>
-      <div class="split-doc">
-        <div>
-          <ul>
-            <li>主題、工具列停靠位置（左／右側）、寬度、緊湊模式與介面縮放比例都可以自訂。</li>
-            <li>道具名稱與篩選欄支援模糊搜尋（輸入時自動加上 <code>~</code>）。</li>
-            <li>可自訂聚焦／清除搜尋欄的快捷鍵：在設定中點快捷鍵欄位後按下想要的按鍵，<kbd>Backspace</kbd> 清除、<kbd>Esc</kbd> 取消。</li>
-            <li>可開啟「使用道具名稱替換網頁標題」，同時開多個分頁時能一眼認出對應道具。</li>
-            <li>擴充功能介面提供繁體中文、簡體中文與英文。</li>
-          </ul>
-          <div class="note"><p>若將側邊欄「選單寬度」設為「自訂」，即可直接拖曳側邊欄邊緣調整最適合螢幕尺寸的寬度；搭配「使用緊湊介面」可再多露出一列清單項目。</p></div>
-        </div>
-        <figure class="shot" style="margin:0">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/settings.jpg" data-lightbox-alt="PoeXD 設定頁" data-lightbox-caption="PoeXD 系統設定頁：可調整主題、漢化模式、側邊欄位置與縮放比例。">
-            <img src="../assets/poexd/settings.jpg" width="338" height="640" alt="PoeXD 設定頁">
+      <span class="meta-code sec-num">12 / SETTINGS &amp; THEMES</span>
+      <h2>設定、外觀主題與快捷鍵</h2>
+      <ul>
+        <li><strong>單頁可搜尋設定與模組開關</strong>：透過頂部分類導覽或搜尋快速找到設定項目，可個別開關側邊欄與頁面增強模組，並備份／還原或重設（同時包含 <span class="nowrap">PoE 1</span> 與 <span class="nowrap">PoE 2</span> 設定）。</li>
+        <li><strong>11 款內建主題與自訂配色</strong>：內建深色與淺色共 11 款主題，也可在「自訂」調整背景色、表面色、文字色、主色、危險色與 4 種圓角風格，提供即時元件預覽並支援複製／匯入 JSON 分享配色。</li>
+        <li><strong>版面與導覽</strong>：直接拖曳側邊欄內側邊緣即可調整寬度，並支援切換左右側、介面縮放比例、使用導覽與「在頁面上指出」標示。</li>
+        <li><strong>搜尋與快捷鍵</strong>：道具名稱與篩選欄支援模糊搜尋（自動加 <code>~</code>）、自訂聚焦／清除快捷鍵（<kbd>Backspace</kbd> 清除、<kbd>Esc</kbd> 取消），以及將分頁標題換成目前搜尋的道具名稱。</li>
+        <li>擴充功能介面提供繁體中文、簡體中文與英文；詞綴資料涵蓋官方交易網站 11 種語言。</li>
+      </ul>
+      <div class="shot-pair is-portrait">
+        <figure class="shot">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/settings.jpg" data-lightbox-alt="PoeXD 新版系統設定頁：包含頂部分類導覽、搜尋、市集漢化與手動更新快取" data-lightbox-caption="新版系統設定頁：單頁可搜尋設計，支援分類跳轉、模組開關、備份還原與手動更新漢化快取。">
+            <img src="../assets/poexd/settings.jpg" width="442" height="740" alt="PoeXD 新版系統設定頁：包含頂部分類導覽、搜尋、市集漢化與手動更新快取">
           </button>
-          <figcaption><span>PoeXD 設定頁。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>單頁可搜尋設定與市集漢化快取更新。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/theme-custom.jpg" data-lightbox-alt="PoeXD 外觀與版面設定：11 款內建主題與自訂色碼、圓角、即時元件預覽及 JSON 匯入匯出" data-lightbox-caption="外觀主題與自訂編輯器：11 款內建主題、5 組自訂色碼、圓角切換與 JSON 配色分享。">
+            <img src="../assets/poexd/theme-custom.jpg" width="442" height="760" alt="PoeXD 外觀與版面設定：11 款內建主題與自訂色碼、圓角、即時元件預覽及 JSON 匯入匯出">
+          </button>
+          <figcaption><span>11 款內建主題、自訂配色圓角與 JSON 分享。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
       </div>
     </section>
 
     <section id="faq">
-      <span class="meta-code sec-num">11 / FAQ</span>
+      <span class="meta-code sec-num">13 / FAQ</span>
       <h2>常見問題</h2>
       <div class="faq-list">
         <details class="faq">
