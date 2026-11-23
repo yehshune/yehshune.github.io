@@ -266,19 +266,19 @@
     <section id="result-board">
       <span class="meta-code sec-num">07 / RESULT BOARD</span>
       <h2>搜尋結果看板</h2>
-      <p>在一般搜尋頁把目前取得的結果集中到側邊欄（從側邊欄分頁或官方結果數旁的「看板」按鈕開啟），不會改動官方結果列表。</p>
-      <ol class="steps">
-        <li><strong>物品清單</strong>：依關鍵字、價格區間、隱藏已售出與只看可直購篩選並排序，點一下即可捲動定位並高亮官方結果列；可直接前往藏身處或釘選。</li>
+      <p>在一般搜尋頁把目前取得的結果集中到側邊欄（從側邊欄分頁或官方結果數旁的「看板」按鈕開啟），預設不會改動官方結果列表，也可手動開啟同步過濾直接篩選官方列表。</p>
+      <ol class="steps">https://poe.ninja/zh-tw/poe1/builds/covens/character/ShairoNN-4081/Meowshiro#i=0&search=class%3DChieftain%26skills%3DRighteous%2BFire
+        <li><strong>物品清單與獨立詞綴篩選</strong>：依關鍵字、價格區間、隱藏已售出與只看可直購篩選並排序；可展開「必含獨立詞綴篩選」拆解結果中的單詞／複合詞綴（支援 <code>T1</code>、<code>T1–T2</code> 等階級與破裂／基底／工藝分類），並可一鍵同步過濾左側官方結果列，點一下即可捲動定位並高亮官方結果列。</li>
         <li><strong>賣家清單與倉庫分組</strong>：依可直購件數與換算總價排序，找出能在同一間藏身處一次買齊多件的賣家，並依倉庫分頁分組標出格位座標。</li>
         <li><strong>倉庫搜尋 regex</strong>：勾選同一賣家要買的物品後顯示小計，一鍵複製 <code>regex</code> 貼進對方倉庫搜尋框，同時標出所有目標物品（無法區分時會提示警告）。</li>
         <li><strong>批次載入與自動重整</strong>：透過官方「載入更多」逐批（可記憶每次筆數）或一次載入全部（上限 100 筆）；前往藏身處連結過期時會自動重新整理再前往。</li>
       </ol>
       <div class="shot-pair is-portrait">
         <figure class="shot">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/result-board-items.jpg" data-lightbox-alt="搜尋結果看板的物品清單：列出本次搜尋取得的物品、換算價格與篩選排序控制" data-lightbox-caption="搜尋結果看板（物品清單）：集中篩選、排序並一鍵定位到官方結果列。">
-            <img src="../assets/poexd/result-board-items.jpg" width="442" height="740" alt="搜尋結果看板的物品清單：列出本次搜尋取得的物品、換算價格與篩選排序控制">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/result-board-items.jpg" data-lightbox-alt="搜尋結果看板的物品清單：展開必含獨立詞綴篩選（單詞／複合與 T 階條件），並開啟同步過濾左側官方列表" data-lightbox-caption="搜尋結果看板（物品清單）：依必含獨立詞綴與 T 階過濾結果，並可同步過濾官方列表。">
+            <img src="../assets/poexd/result-board-items.jpg" width="491" height="740" alt="搜尋結果看板的物品清單：展開必含獨立詞綴篩選（單詞／複合與 T 階條件），並開啟同步過濾左側官方列表">
           </button>
-          <figcaption><span>物品清單：集中篩選價格區間與批次載入。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>物品清單：獨立詞綴與 T 階篩選、同步過濾官方列表。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
         <figure class="shot">
           <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/result-board-sellers.jpg" data-lightbox-alt="搜尋結果看板的賣家清單：展開同一賣家的多件可直購物品，依倉庫分組並產生倉庫搜尋 regex" data-lightbox-caption="搜尋結果看板（賣家清單）：依倉庫分組並一鍵複製倉庫搜尋 regex 一次買齊。">
@@ -316,23 +316,23 @@
       <h2>PoB 購物清單</h2>
       <ol class="steps">
         <li>在工具列打開「PoB 購物清單」，貼上 <span class="nowrap">Path of Building</span> 匯出代碼，或 <code>poe.ninja</code>、<code>pobb.in</code>、<code>pastebin</code> 分享網址。</li>
-        <li>清單會依裝備、藥劑、珠寶與寶石分類整理，可同時保存多份 build；若 build 含多組裝備套裝或技能組，可從上方選單即時切換。</li>
-        <li>在彈出預覽可一鍵「改用總和詞綴」（抗性、生命、能力值）或將數值條件放寬 10%（<code>-10%</code>），微調後一鍵搜尋、加入書籤或直接送進線上搜尋主控台。</li>
+        <li>預設以「裝備欄」紙娃娃視圖呈現角色裝備、武器組切換（<code>I / II</code>）、藥劑、星團與珠寶、插槽連線與寶石圖示（支援 <span class="nowrap">PoE 1 / PoE 2</span>，可切換為「清單」視圖）；可同時保存多份 build，並在多組裝備套裝或技能組間即時切換。</li>
+        <li>可針對整份 build 調整「整體搜尋設定」（詞綴數值下限比例、連結條件、稀有裝改依類別＋防禦類型搜尋、防禦下限與預設改用總和詞綴），或在單件預覽微調條件、放寬 10%（<code>-10%</code>）後一鍵搜尋、加入書籤、送進線上搜尋主控台，或將目前頁面搜尋存回該欄位。</li>
       </ol>
       <div class="note"><p>從 <code>pobb.in</code>、<code>pastebin</code> 匯入需要另外授權存取該網站。代碼只存在你的瀏覽器，不會上傳。開啟市集漢化並授權 <code>pobb.in</code> 後，<code>pobb.in</code> 分享頁也會自動顯示中文。</p></div>
 
       <div class="shot-pair is-portrait">
         <figure class="shot">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/pob.jpg" data-lightbox-alt="PoB 購物清單：Slayer build 的裝備套裝與技能組切換選單，下方依欄位列出裝備" data-lightbox-caption="PoB 購物清單：切換裝備套裝與技能組，依欄位列出裝備。">
-            <img src="../assets/poexd/pob.jpg" width="338" height="640" alt="PoB 購物清單：Slayer build 的裝備套裝與技能組切換選單，下方依欄位列出裝備">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/pob.jpg" data-lightbox-alt="PoB 購物清單的裝備欄視圖：以角色紙娃娃排列武器、防具、藥劑、星團珠寶、珠寶與臟器，支援切換武器組與清單視圖" data-lightbox-caption="PoB 購物清單（裝備欄視圖）：以紙娃娃呈現裝備圖示、武器組切換、藥劑與珠寶。">
+            <img src="../assets/poexd/pob.jpg" width="491" height="840" alt="PoB 購物清單的裝備欄視圖：以角色紙娃娃排列武器、防具、藥劑、星團珠寶、珠寶與臟器，支援切換武器組與清單視圖">
           </button>
-          <figcaption><span>切換裝備套裝與技能組，依欄位列出裝備。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>裝備欄視圖：紙娃娃呈現裝備、武器組、藥劑與珠寶。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
         <figure class="shot">
-          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/pob-gems.jpg" data-lightbox-alt="PoB 購物清單的寶石區：依裝備欄位分組，列出每顆寶石的等級與品質" data-lightbox-caption="PoB 寶石清單：依所在裝備欄位分組，標出等級與品質。">
-            <img src="../assets/poexd/pob-gems.jpg" width="338" height="702" alt="PoB 購物清單的寶石區：依裝備欄位分組，列出每顆寶石的等級與品質">
+          <button type="button" class="shot-btn" data-lightbox-src="../assets/poexd/pob-gems.jpg" data-lightbox-alt="PoB 購物清單的寶石區：依裝備欄位分組，顯示寶石圖示、需求數量與等級品質" data-lightbox-caption="PoB 寶石清單：依所在裝備欄位分組，顯示寶石圖示、等級與品質。">
+            <img src="../assets/poexd/pob-gems.jpg" width="491" height="840" alt="PoB 購物清單的寶石區：依裝備欄位分組，顯示寶石圖示、需求數量與等級品質">
           </button>
-          <figcaption><span>寶石依所在欄位分組，標出等級與品質。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
+          <figcaption><span>寶石依所在欄位分組，顯示圖示、等級與品質。</span><span class="shot-zoom-hint">點擊放大</span></figcaption>
         </figure>
       </div>
     </section>
