@@ -1323,34 +1323,46 @@ details.faq div p { margin: 0; color: var(--text-2); }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background: rgba(8, 10, 14, 0.88);
+  padding: 12px;
+  background: rgba(8, 10, 14, 0.9);
   backdrop-filter: blur(6px);
 }
 .lightbox[hidden] { display: none; }
 .lightbox-box {
   position: relative;
-  max-width: min(1080px, 94vw);
-  max-height: 90vh;
+  max-width: 96vw;
+  max-height: 96vh;
   background: var(--bg-elevated);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 14px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 .lightbox-box.is-qr { max-width: 380px; }
 .lightbox-box.is-qr .lightbox-media { background: #ffffff; padding: 16px; border-radius: var(--radius-sm); }
+.lightbox-box.is-qr .lightbox-zoom { display: none; }
 .lightbox-media {
   overflow: auto;
   border-radius: var(--radius-sm);
   background: var(--bg-recessed);
 }
 .lightbox-media img {
-  max-height: 74vh;
+  max-height: 86vh;
+  max-width: 100%;
   width: auto;
+  height: auto;
   margin: 0 auto;
+  cursor: zoom-in;
+}
+.lightbox-box.is-qr .lightbox-media img { cursor: default; }
+.lightbox-media.is-zoomed img {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  cursor: zoom-out;
 }
 .lightbox-bar {
   display: flex;
@@ -1358,11 +1370,18 @@ details.faq div p { margin: 0; color: var(--text-2); }
   justify-content: space-between;
   gap: 16px;
 }
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
 .lightbox-cap {
   margin: 0;
   font-size: 0.9375rem;
   color: var(--text-2);
 }
+.lightbox-zoom,
 .lightbox-close {
   border: 0;
   border-radius: var(--radius-sm);
@@ -1373,7 +1392,9 @@ details.faq div p { margin: 0; color: var(--text-2); }
   cursor: pointer;
   white-space: nowrap;
 }
+.lightbox-zoom:hover,
 .lightbox-close:hover { background: var(--accent); color: var(--accent-fg); }
+.lightbox-zoom[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
 
 /* 響應式調整 */
 @media (max-width: 960px) {

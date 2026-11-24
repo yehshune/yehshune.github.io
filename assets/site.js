@@ -367,7 +367,10 @@
           <div class="lightbox-media" id="site-lightbox-media"></div>
           <div class="lightbox-bar">
             <p class="lightbox-cap" id="site-lightbox-cap"></p>
-            <button type="button" class="lightbox-close" id="site-lightbox-close">關閉 (Esc)</button>
+            <div class="lightbox-actions">
+              <button type="button" class="lightbox-zoom" id="site-lightbox-zoom" aria-pressed="false">原寸 1:1</button>
+              <button type="button" class="lightbox-close" id="site-lightbox-close">關閉 (Esc)</button>
+            </div>
           </div>
         </div>`;
       document.body.appendChild(dialog);
@@ -376,11 +379,21 @@
     const box = dialog.querySelector('.lightbox-box');
     const media = dialog.querySelector('#site-lightbox-media');
     const cap = dialog.querySelector('#site-lightbox-cap');
+    const zoomBtn = dialog.querySelector('#site-lightbox-zoom');
     const closeBtn = dialog.querySelector('#site-lightbox-close');
     let lastTrigger = null;
 
+    const setZoom = (zoomed) => {
+      media.classList.toggle('is-zoomed', zoomed);
+      if (zoomBtn) {
+        zoomBtn.setAttribute('aria-pressed', String(zoomed));
+        zoomBtn.textContent = zoomed ? '符合視窗' : '原寸 1:1';
+      }
+    };
+
     const close = () => {
       dialog.hidden = true;
+      setZoom(false);
       media.replaceChildren();
       document.body.style.overflow = '';
       if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
@@ -391,16 +404,25 @@
       const src = trigger.dataset.lightboxSrc;
       if (!src) return;
       lastTrigger = trigger;
-      box.classList.toggle('is-qr', trigger.dataset.lightboxMode === 'qr');
+      const isQr = trigger.dataset.lightboxMode === 'qr';
+      box.classList.toggle('is-qr', isQr);
+      setZoom(false);
       const img = document.createElement('img');
       img.src = src;
       img.alt = trigger.dataset.lightboxAlt || '';
+      if (!isQr) {
+        img.addEventListener('click', () => setZoom(!media.classList.contains('is-zoomed')));
+      }
       media.replaceChildren(img);
       cap.textContent = trigger.dataset.lightboxCaption || '';
       dialog.hidden = false;
       document.body.style.overflow = 'hidden';
       closeBtn.focus();
     };
+
+    if (zoomBtn) {
+      zoomBtn.addEventListener('click', () => setZoom(!media.classList.contains('is-zoomed')));
+    }
 
     document.addEventListener('click', (e) => {
       const trigger = e.target.closest('[data-lightbox-src]');
