@@ -564,9 +564,15 @@ section.band {
   object-fit: contain;
 }
 .transform-layer-after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--bg-recessed);
   clip-path: inset(0 0 0 100%);
 }
 .transform-layer-console {
+  z-index: 4;
+  background: var(--bg-recessed);
   opacity: 0;
   transform: scale(1.04);
 }
@@ -575,6 +581,7 @@ section.band {
   top: 0;
   bottom: 0;
   left: 100%;
+  z-index: 3;
   width: 2px;
   background: var(--gold);
   pointer-events: none;
