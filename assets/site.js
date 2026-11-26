@@ -2,6 +2,7 @@
 (() => {
   const prefersReduced = () =>
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isZhHans = () => /^zh-(Hans|CN)/i.test(document.documentElement.lang || '');
 
   /* 1. 分段頁籤共用控制（單一選中膠囊語法 + 方向鍵支援） */
   function initTabStrip(strip, onChange) {
@@ -114,11 +115,17 @@
     const rail = stage.querySelector('.narrative-rail');
     const phaseLabel = stage.querySelector('[data-narrative-phase]');
 
-    const phaseMeta = [
-      'PHASE 01 / 國際服原文市集畫面',
-      'PHASE 02 / 台服漢化、P/S 詞綴分階與通貨換算',
-      'PHASE 03 / 線上搜尋主控台集中監聽多組查詢'
-    ];
+    const phaseMeta = isZhHans()
+      ? [
+          'PHASE 01 / 国际服原文市集画面',
+          'PHASE 02 / 市集汉化、P/S 词缀分阶与通货换算',
+          'PHASE 03 / 线上搜索主控台集中监听多组查询'
+        ]
+      : [
+          'PHASE 01 / 國際服原文市集畫面',
+          'PHASE 02 / 台服漢化、P/S 詞綴分階與通貨換算',
+          'PHASE 03 / 線上搜尋主控台集中監聽多組查詢'
+        ];
 
     const setStepVisual = (idx) => {
       steps.forEach((el, i) => el.classList.toggle('is-active', i === idx));
@@ -339,7 +346,7 @@
       if (mode === 'split') setSplit(50);
       else if (mode === 'en') setSplit(100);
       else if (mode === 'zh') setSplit(0);
-      if (pctText && isPair) pctText.textContent = '並排檢視';
+      if (pctText && isPair) pctText.textContent = isZhHans() ? '并排查看' : '並排檢視';
     };
 
     range.addEventListener('input', () => setSplit(range.value));
@@ -353,8 +360,13 @@
 
   /* 7. 共用燈箱（截圖與 QR Code 點擊放大） */
   function initLightbox() {
+    const lbText = () => (isZhHans()
+      ? { native: '原尺寸 1:1', fit: '适应窗口', close: '关闭 (Esc)' }
+      : { native: '原寸 1:1', fit: '符合視窗', close: '關閉 (Esc)' });
+
     let dialog = document.getElementById('site-lightbox');
     if (!dialog) {
+      const t = lbText();
       dialog = document.createElement('div');
       dialog.id = 'site-lightbox';
       dialog.className = 'lightbox';
@@ -368,8 +380,8 @@
           <div class="lightbox-bar">
             <p class="lightbox-cap" id="site-lightbox-cap"></p>
             <div class="lightbox-actions">
-              <button type="button" class="lightbox-zoom" id="site-lightbox-zoom" aria-pressed="false">原寸 1:1</button>
-              <button type="button" class="lightbox-close" id="site-lightbox-close">關閉 (Esc)</button>
+              <button type="button" class="lightbox-zoom" id="site-lightbox-zoom" aria-pressed="false">${t.native}</button>
+              <button type="button" class="lightbox-close" id="site-lightbox-close">${t.close}</button>
             </div>
           </div>
         </div>`;
@@ -384,11 +396,13 @@
     let lastTrigger = null;
 
     const setZoom = (zoomed) => {
+      const t = lbText();
       media.classList.toggle('is-zoomed', zoomed);
       if (zoomBtn) {
         zoomBtn.setAttribute('aria-pressed', String(zoomed));
-        zoomBtn.textContent = zoomed ? '符合視窗' : '原寸 1:1';
+        zoomBtn.textContent = zoomed ? t.fit : t.native;
       }
+      if (closeBtn) closeBtn.textContent = t.close;
     };
 
     const close = () => {

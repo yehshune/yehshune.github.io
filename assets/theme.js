@@ -14,12 +14,15 @@
   root.dataset.theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
 
   const current = () => (root.dataset.theme === 'light' ? 'light' : 'dark');
+  const isZhHans = () => /^zh-(Hans|CN)/i.test(root.lang || '');
 
   const updateLabels = (btn) => {
-    const next = current() === 'dark' ? '淺色' : '深色';
-    btn.setAttribute('aria-label', `切換為${next}模式`);
+    const label = isZhHans()
+      ? (current() === 'dark' ? '切换为浅色模式' : '切换为深色模式')
+      : (current() === 'dark' ? '切換為淺色模式' : '切換為深色模式');
+    btn.setAttribute('aria-label', label);
     btn.setAttribute('aria-pressed', String(current() === 'light'));
-    btn.title = `切換為${next}模式`;
+    btn.title = label;
   };
 
   document.addEventListener('DOMContentLoaded', () => {

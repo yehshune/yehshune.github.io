@@ -5,12 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PoeXD Extension 使用教學 — yehshune</title>
 <meta name="description" content="PoeXD Extension 完整使用教學：安裝、線上搜尋主控台、搜尋結果看板、釘選物品、常用詞綴群組、詞綴篩選與 T 階、PoB 購物清單、書籤管理、11 款外觀主題與市集漢化。">
+<link rel="canonical" href="https://yehshune.github.io/poexd/">
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://yehshune.github.io/poexd/">
+<link rel="alternate" hreflang="zh-Hans-CN" href="https://yehshune.github.io/poexd/zh-cn/">
+<link rel="alternate" hreflang="x-default" href="https://yehshune.github.io/poexd/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="yehshune">
+<meta property="og:url" content="https://yehshune.github.io/poexd/">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:title" content="PoeXD Extension 使用教學">
 <meta property="og:description" content="Path of Exile 官方交易市集輔助擴充套件的完整使用說明。">
 <meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PoeXD Extension 使用教學 — yehshune">
+<meta name="twitter:description" content="Path of Exile 官方交易市集輔助擴充套件的完整使用說明。">
+<meta name="twitter:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
 <link rel="icon" href="../assets/poexd/logo-300x300.png">
 <link rel="stylesheet" href="../assets/site.css">
 <script src="../assets/theme.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "PoeXD Extension",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Edge, Brave",
+      "inLanguage": "zh-Hant-TW",
+      "url": "https://yehshune.github.io/poexd/",
+      "image": "https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png",
+      "description": "PoeXD 會在《流亡黯道》PoE 1／PoE 2 官方交易市集旁加上可收合側邊工具列，提供線上搜尋主控台、詞綴篩選與 T 階、搜尋結果看板、釘選物品、PoB 購物清單與國際服市集漢化。",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "shu (yehshune)",
+        "url": "https://github.com/yehshune"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "我的資料會被上傳嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。PoeXD 沒有伺服器，也沒有分析或追蹤程式碼，所有資料都存在你的瀏覽器本機。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "為什麼價格換算沒有出現？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "價格資料來自 poe.ninja，只提供國際服；台服與國服目前不支援價格換算。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工具列沒有出現怎麼辦？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "請確認目前頁面為官方交易網站，並在瀏覽器擴充功能頁確認 PoeXD 已啟用後重新整理頁面。若仍未出現，歡迎到 GitHub 開 Issue 回報。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "哪裡可以看到更新內容、回報問題？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "更新內容整理在 GitHub Releases；功能建議或問題回報請開 GitHub Issue，安全性問題請依 SECURITY.md 私下聯繫。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav class="nav" aria-label="主要導覽">
@@ -27,6 +104,7 @@
       <li><a class="link" href="../support/">贊助</a></li>
       <li class="hide-xs"><a class="link" href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
     </ul>
+    <a class="lang-switch" href="zh-cn/" hreflang="zh-Hans-CN" lang="zh-Hans-CN" title="切换至简体中文" aria-label="切换至简体中文">简</a>
     <button type="button" class="theme-toggle" data-theme-toggle aria-label="切換為淺色模式">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
@@ -480,5 +558,6 @@
 </footer>
 
 <script src="../assets/site.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f3e4e3161cd447ea6e07ca4725444db"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

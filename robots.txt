@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yehshune.github.io/sitemap.xml

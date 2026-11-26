@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh-Hans-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>yehshune — shu 的个人主页与 PoeXD 流放之路交易助手</title>
+<meta name="description" content="shu（yehshune）的个人主页与开源项目：专为《流放之路》（Path of Exile / PoE 1 &amp; PoE 2）打造的 PoeXD Extension 官方交易市集中文化与辅助插件及完整使用教程。">
+<link rel="canonical" href="https://yehshune.github.io/zh-cn/">
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://yehshune.github.io/">
+<link rel="alternate" hreflang="zh-Hans-CN" href="https://yehshune.github.io/zh-cn/">
+<link rel="alternate" hreflang="x-default" href="https://yehshune.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yehshune">
+<meta property="og:url" content="https://yehshune.github.io/zh-cn/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:title" content="yehshune — shu 的个人主页与 PoeXD 流放之路交易助手">
+<meta property="og:description" content="把《流放之路》交易里的重复步骤，改写成顺手的浏览器工具。">
+<meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="yehshune — shu 的个人主页与 PoeXD 流放之路交易助手">
+<meta name="twitter:description" content="把《流放之路》交易里的重复步骤，改写成顺手的浏览器工具。">
+<meta name="twitter:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
+<link rel="icon" href="../assets/poexd/logo-300x300.png">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/theme.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "yehshune",
+      "url": "https://yehshune.github.io/zh-cn/",
+      "inLanguage": ["zh-Hans-CN", "zh-Hant-TW"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "PoeXD Extension",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Edge, Brave",
+      "inLanguage": ["zh-Hans-CN", "zh-Hant-TW", "en"],
+      "url": "https://yehshune.github.io/poexd/zh-cn/",
+      "image": "https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png",
+      "description": "专为《流放之路》（Path of Exile / PoE 1 & PoE 2）官方交易市集打造的免费开源辅助浏览器插件，提供国际服市集汉化、线上搜索主控台、词缀 T 阶、PoB 购物清单与书签管理。",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "shu (yehshune)",
+        "url": "https://github.com/yehshune"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="nav" aria-label="主导航">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M10.4 2h3.2l.6 2.3a7.8 7.8 0 0 1 1.9.8l2-1.3 2.3 2.3-1.3 2a7.8 7.8 0 0 1 .8 1.9L22 10.4v3.2l-2.3.6a7.8 7.8 0 0 1-.8 1.9l1.3 2-2.3 2.3-2-1.3a7.8 7.8 0 0 1-1.9.8l-.6 2.3h-3.2l-.6-2.3a7.8 7.8 0 0 1-1.9-.8l-2 1.3-2.3-2.3 1.3-2a7.8 7.8 0 0 1-.8-1.9L2 13.6v-3.2l2.3-.6a7.8 7.8 0 0 1 .8-1.9l-1.3-2 2.3-2.3 2 1.3a7.8 7.8 0 0 1 1.9-.8L10.4 2ZM12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/>
+      </svg>
+      <span>yehshune</span><span class="sub">// shu</span>
+    </a>
+    <ul>
+      <li><a class="link" href="#works">作品</a></li>
+      <li><a class="link" href="../poexd/zh-cn/">教程</a></li>
+      <li><a class="link" href="../support/?lang=zh-cn">赞助</a></li>
+      <li class="hide-xs"><a class="link" href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+    </ul>
+    <a class="lang-switch" href="../" hreflang="zh-Hant-TW" lang="zh-Hant-TW" title="切換至繁體中文" aria-label="切換至繁體中文">繁</a>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="切换为浅色模式">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero-stage">
+  <div class="wrap">
+    <div class="hero-kicker">
+      <span class="meta-code">SHU (YEHSHUNE)</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <span class="meta-code">PATH OF EXILE 玩家工具开发者 · 业余开源</span>
+    </div>
+
+    <h1>把《流放之路》交易里的<span class="nowrap">重复步骤，</span><br>改写成顺手的<span class="nowrap"><span class="em">浏览器工具</span>。</span></h1>
+
+    <div class="hero-subrow">
+      <p class="lead">玩 <span class="nowrap">PoE 1／PoE 2</span> 时一直找不到顺手的网页市集辅助界面，干脆自己动手写。业余时间维护开源浏览器插件，把实时搜索监听、词缀 T 阶快选、<span class="nowrap">PoB 装备</span>比对与国际服简繁汉化收进同一个侧边工作台。</p>
+      <div class="actions">
+        <a class="btn primary" href="../poexd/zh-cn/">查看 PoeXD 使用教程 →</a>
+        <a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hnnpgpcnmgjbmmhgogcljbnfoklblgmb" target="_blank" rel="noopener noreferrer">Edge 商店安装 ↗</a>
+        <a class="btn" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg" target="_blank" rel="noopener noreferrer">Chrome 安装 ↗</a>
+        <a class="btn ghost" href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="workbench" data-workbench>
+      <div class="workbench-bar">
+        <div class="tab-strip" role="tablist" aria-label="PoeXD 实机模块预览">
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="true"
+            data-tab="live"
+            data-src="../assets/poexd/live-search.jpg"
+            data-alt="PoeXD 线上搜索主控台：单个标签页同时监听多组实时搜索连接与速率状态"
+            data-status="LIVE CONSOLE · PoE 1 / PoE 2"
+            data-kicker="01 / REAL-TIME MONITOR"
+            data-title="线上搜索主控台"
+            data-desc="把分散在十几个标签页的 Live Search 收进同一个主控台，按书签文件夹批量启停，并提供断线自动重连与重启恢复。"
+            data-meta="按文件夹批量启停与音效提示|实时监测官方 API 速率上限|浏览器重启后可一键恢复连接"
+            data-href="../poexd/zh-cn/#live-search">
+            <span class="idx">01</span>搜索主控台
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="affix"
+            data-src="../assets/poexd/affix.jpg"
+            data-alt="PoeXD 词缀选择器：按物品类别与物等筛选前缀与后缀，一次应用到官方筛选栏"
+            data-status="AFFIX PICKER · T1–T11"
+            data-kicker="02 / AFFIX &amp; TIERS"
+            data-title="词缀选择与 T 阶"
+            data-desc="按物品基底与物等区间列出可出现的前／后缀，勾选待应用清单一次写入官方筛选栏，并在旁边直接切换 T1–T11 阶级数值。"
+            data-meta="支持前缀／后缀与词缀分组切换|筛选栏旁一键填入 T 阶数值范围|支持 PoE 2 碑牌、换界石与范围珠宝"
+            data-href="../poexd/zh-cn/#affix">
+            <span class="idx">02</span>词缀选择器
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="preview"
+            data-src="../assets/poexd/search-preview.jpg"
+            data-alt="PoeXD 搜索预览窗口：微调书签背后的基底与词缀条件后叠加到当前搜索"
+            data-status="SEARCH PREVIEW · 书签叠加"
+            data-kicker="03 / BOOKMARK OVERLAY"
+            data-title="搜索预览与群组叠加"
+            data-desc="点击书签名称先打开预览窗口查看完整条件，可先微调数值或只勾选其中几条词缀叠加到当前搜索，不覆盖已设好的筛选。"
+            data-meta="支持常用词缀群组单步撤销|书签自动套用当前服务器与赛季|支持与 TFT Trade 双向导入导出"
+            data-href="../poexd/zh-cn/#stat-groups">
+            <span class="idx">03</span>搜索预览
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="translate"
+            data-src="../assets/poexd/translate-zh.jpg"
+            data-alt="PoeXD 国际服市集汉化与结果增强：显示中文词缀、P/S 阶级、通货换算与 PoB 复制按钮"
+            data-status="LOCALIZATION · 简／繁／双语"
+            data-kicker="04 / TRADE LOCALIZATION"
+            data-title="市集汉化与结果增强"
+            data-desc="仅转换页面显示、不改动查询参数，支持腾讯服／台服用语与中英对照；结果卡片同时补上 poe.ninja 汇率换算、词缀快筛与复制 PoB。"
+            data-meta="支持简体中文、繁体中文与中英对照|按 poe.ninja 汇率换算并排序标价|一键复制英文物品文本粘贴进 PoB"
+            data-href="../poexd/zh-cn/#translation">
+            <span class="idx">04</span>汉化与估价
+          </button>
+        </div>
+        <div class="workbench-status">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-wb-status>LIVE CONSOLE · PoE 1 / PoE 2</span>
+        </div>
+      </div>
+
+      <div class="workbench-body">
+        <div class="workbench-viewport">
+          <img data-wb-img src="../assets/poexd/live-search.jpg" width="1040" height="360" alt="PoeXD 线上搜索主控台：单个标签页同时监听多组实时搜索连接与速率状态">
+        </div>
+        <aside class="workbench-aside" aria-live="polite">
+          <div>
+            <span class="meta-code" data-wb-kicker>01 / REAL-TIME MONITOR</span>
+            <h2 data-wb-title>线上搜索主控台</h2>
+            <p data-wb-desc>把分散在十几个标签页的 Live Search 收进同一个主控台，按书签文件夹批量启停，并提供断线自动重连与重启恢复。</p>
+            <ul class="workbench-meta" data-wb-meta>
+              <li>按文件夹批量启停与音效提示</li>
+              <li>实时监测官方 API 速率上限</li>
+              <li>浏览器重启后可一键恢复连接</li>
+            </ul>
+          </div>
+          <a class="workbench-link" data-wb-link href="../poexd/zh-cn/#live-search">阅读此功能教程 →</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="band workflow-section" id="workflow">
+    <div class="wrap narrative-pin">
+      <div class="section-head">
+        <div>
+          <span class="meta-code">WORKFLOW TRANSFORMATION</span>
+          <h2>同一件市集装备，从查英文词表到一眼判读</h2>
+        </div>
+        <a class="skip-narrative" href="#works">跳过流程展示 ↓</a>
+      </div>
+
+      <div class="narrative-layout">
+        <div class="narrative-steps" role="group" aria-label="市集处理阶段">
+          <span class="narrative-rail" aria-hidden="true"></span>
+          <button type="button" class="n-step is-active">
+            <span class="meta-code">01 / BEFORE</span>
+            <h3>国际服原文市集，开多页还得对照词缀</h3>
+            <p>原版市集界面只有英文词条与单一通货标价，同时蹲多件装备得开一排浏览器标签页，还经常遇到实时搜索断线。</p>
+          </button>
+          <button type="button" class="n-step">
+            <span class="meta-code">02 / LOCALIZE &amp; TIER</span>
+            <h3>就地汉化、标出 P/S 阶级与通货换算</h3>
+            <p>开启 PoeXD 后直接在结果卡显示国服／台服中文用语、前后缀 T 阶、高阶词缀高亮，以及按 poe.ninja 汇率折算后的等值价格。</p>
+          </button>
+          <button type="button" class="n-step">
+            <span class="meta-code">03 / LIVE CONSOLE</span>
+            <h3>所有实时搜索收进单个监听主控台</h3>
+            <p>把书签文件夹里的查询送进主控台统一监听与自动重连，省下反复切换标签页的时间，不错过刚上架的目标装备。</p>
+          </button>
+        </div>
+
+        <div class="narrative-stage">
+          <div class="transform-frame">
+            <img src="../assets/poexd/translate-en.jpg" width="630" height="345" alt="汉化前：国际服英文装备搜索结果卡片">
+            <div class="transform-layer-after">
+              <img src="../assets/poexd/translate-zh.jpg" width="630" height="360" alt="汉化后：中文词缀、P2/S1 阶级与通货汇率换算">
+            </div>
+            <span class="transform-divider" aria-hidden="true"></span>
+            <img class="transform-layer-console" src="../assets/poexd/live-search.jpg" width="1040" height="360" alt="线上搜索主控台：左侧连接列表与右侧实时进件结果">
+          </div>
+          <div class="narrative-caption">
+            <span data-narrative-phase>PHASE 01 / 国际服原文市集画面</span>
+            <span>向下滚动或点击左侧步骤切换实景</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band js-section-enter" id="works">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="meta-code">01 / FLAGSHIP PROJECT</span>
+          <h2>代表作品：PoeXD Extension</h2>
+        </div>
+        <p class="head-side">已上架 Microsoft Edge 外接程序与 Chrome Web Store，直接集成在官方交易网页旁，无需跳转外部网站。</p>
+      </div>
+
+      <div class="dossier">
+        <div>
+          <h3 class="dossier-title">模块化设计、本地存储与跨工具整合规格</h3>
+          <p class="dossier-lead">不想被迫接受一整包臃肿插件，因此把每个功能拆成可独立开关的模块；侧边工作台可停靠左侧或右侧，并自定义界面缩放比例与聚焦快捷键。</p>
+
+          <ul class="spec-list">
+            <li><span class="k">支持范围</span><span class="v">同时支持 <span class="nowrap">PoE 1／PoE 2</span> 官方交易市集，覆盖国际服、腾讯服（国服）与台服；界面提供简体中文、繁体中文与英文。</span></li>
+            <li><span class="k">跨工具互通</span><span class="v">支持导入 <span class="nowrap">Path of Building</span> 代码、<code>poe.ninja</code>／<code>pobb.in</code>／<code>pastebin</code> 链接，并可与 TFT Trade 互相导入导出书签。</span></li>
+            <li><span class="k">安装与发布</span><span class="v">商店版会随更新自动推送，也可在 GitHub Releases 下载 <code>chromium.zip</code> 手动加载已解压的扩展程序。</span></li>
+            <li><span class="k">技术架构</span><span class="v">使用 WXT 构建浏览器扩展架构，搭配 Vue 3 与 TypeScript 开发，并通过 Vitest 与 Playwright 覆盖测试。</span></li>
+          </ul>
+
+          <p class="stack-line"><strong>TECH STACK</strong>TypeScript · Vue 3 · WXT · Tailwind CSS · Vitest · Playwright</p>
+
+          <div class="actions">
+            <a class="btn primary" href="../poexd/zh-cn/">完整教程 →</a>
+            <a class="btn" href="https://microsoftedge.microsoft.com/addons/detail/hnnpgpcnmgjbmmhgogcljbnfoklblgmb" target="_blank" rel="noopener noreferrer">Edge 商店 ↗</a>
+            <a class="btn" href="https://chromewebstore.google.com/detail/fbbkaeekjalfecgjfcephaiopffeobjg" target="_blank" rel="noopener noreferrer">Chrome 商店 ↗</a>
+            <a class="btn ghost" href="https://github.com/yehshune/PoeXD-Extension" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="companion-grid">
+          <figure class="companion-fig">
+            <img src="../assets/poexd/result-board-sellers.jpg" width="442" height="740" alt="PoeXD 搜索结果看板卖家视图：按仓库分组并生成仓库搜索 regex">
+            <figcaption>搜索结果看板：找出同藏身处多件直购卖家并复制仓库搜索 regex。</figcaption>
+          </figure>
+          <figure class="companion-fig">
+            <img src="../assets/poexd/theme-custom.jpg" width="442" height="760" alt="PoeXD 外观主题与自定义编辑器：11 款主题、自定义色码与圆角预览">
+            <figcaption>11 款内置外观主题与自定义配色／圆角编辑器。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band js-section-enter" id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="meta-code">DESIGN &amp; PRIVACY STANDARDS</span>
+          <h2>做这个工具的三条底线</h2>
+        </div>
+      </div>
+
+      <div class="principles-grid">
+        <article class="principle">
+          <span class="meta-code">01 / LOCAL-FIRST</span>
+          <h3>数据留在你自己的浏览器</h3>
+          <p>无需注册账号，也没有自建后端服务器、统计分析或追踪脚本；书签、词缀群组、PoB 清单与快捷键设置全都只保存在本地浏览器里。</p>
+        </article>
+        <article class="principle">
+          <span class="meta-code">02 / MIT OPEN SOURCE</span>
+          <h3>MIT 协议完全开源</h3>
+          <p>扩展源码与词缀数据处理脚本均公开在 GitHub，任何人都能审查权限申请与代码行为，也欢迎提交 Issue 反馈问题或讨论需求。</p>
+        </article>
+        <article class="principle">
+          <span class="meta-code">03 / SEASONAL UPDATES</span>
+          <h3>随游戏赛季与市集改版更新</h3>
+          <p>每逢 PoE 1 或 PoE 2 新赛季、新词缀实装或官方交易网站调整布局时同步维护，详细更新日志都会整理在 GitHub Releases。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band js-section-enter" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="emblem-frame">
+          <img src="../assets/poexd/logo-300x300.png" width="300" height="300" alt="PoeXD 蓝色齿轮 P 字标志">
+        </div>
+        <div class="about-copy">
+          <span class="meta-code">ABOUT THE AUTHOR</span>
+          <h2>嗨，我是 shu（yehshune）</h2>
+          <p>平时喜欢研究《流放之路》的配装与市集交易效率，业余时间自己写网页与浏览器插件。这个网站收录我在 GitHub 维护的开源项目、详细图文手册，以及透明的开发赞助渠道。</p>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h3>PoeXD 帮你省下查词缀和切标签页的时间了吗？</h3>
+          <p>项目免费且完全开源，你可以去 GitHub 点颗星、开 Issue 提建议，或前往赞助页请我喝杯咖啡。</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="../support/?lang=zh-cn">前往赞助支持 →</a>
+          <a class="btn" href="https://github.com/yehshune/PoeXD-Extension/issues" target="_blank" rel="noopener noreferrer">反馈问题 ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© yehshune · <a href="https://github.com/yehshune" target="_blank" rel="noopener noreferrer">github.com/yehshune ↗</a></span>
+    <span>Path of Exile 为 Grinding Gear Games 之商标；本站工具为非官方社区作品。</span>
+  </div>
+</footer>
+
+<script src="../assets/vendor/gsap.min.js" defer></script>
+<script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../assets/site.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f3e4e3161cd447ea6e07ca4725444db"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

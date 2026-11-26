@@ -24,6 +24,9 @@
   --mono: "JetBrains Mono", "Cascadia Code", ui-monospace, SFMono-Regular, Consolas, monospace;
   color-scheme: dark;
 }
+:root:lang(zh-Hans) {
+  --font: system-ui, -apple-system, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
 
 :root[data-theme="light"] {
   --bg: #f3f1ec;
@@ -162,6 +165,27 @@ kbd {
   background: var(--accent-soft);
   font-weight: 600;
 }
+.lang-switch {
+  display: inline-grid;
+  place-items: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 9px;
+  flex: none;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: color 0.16s ease, background-color 0.16s ease, transform 0.12s ease;
+}
+.lang-switch:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+.lang-switch:active { transform: scale(0.96); }
 .theme-toggle {
   display: grid;
   place-items: center;

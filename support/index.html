@@ -4,7 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>支持開發 · shu (yehshune)</title>
-<meta name="description" content="贊助 shu（yehshune）的開源專案（PoeXD Extension 等）。Support yehshune's open-source projects.">
+<meta name="description" content="贊助 shu（yehshune）的開源專案（PoeXD Extension 等）。支持流放之路 PoE 1／PoE 2 开源交易助手持续维护。Support yehshune's open-source projects.">
+<link rel="canonical" href="https://yehshune.github.io/support/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yehshune">
+<meta property="og:url" content="https://yehshune.github.io/support/">
+<meta property="og:title" content="支持開發 · shu (yehshune)">
+<meta property="og:description" content="贊助 shu（yehshune）的開源專案（PoeXD Extension 等）。Support yehshune's open-source projects.">
+<meta property="og:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="支持開發 · shu (yehshune)">
+<meta name="twitter:description" content="贊助 shu（yehshune）的開源專案（PoeXD Extension 等）。Support yehshune's open-source projects.">
+<meta name="twitter:image" content="https://yehshune.github.io/assets/poexd/promo-marquee-1400x560.png">
 <link rel="icon" href="../assets/poexd/logo-300x300.png">
 <link rel="stylesheet" href="../assets/site.css">
 <script src="../assets/theme.js"></script>
@@ -12,7 +23,7 @@
 <body>
 <nav class="nav" aria-label="主要導覽" id="site-nav">
   <div class="wrap">
-    <a class="brand" href="../">
+    <a class="brand" id="nav-brand" href="../">
       <svg class="brand-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M10.4 2h3.2l.6 2.3a7.8 7.8 0 0 1 1.9.8l2-1.3 2.3 2.3-1.3 2a7.8 7.8 0 0 1 .8 1.9L22 10.4v3.2l-2.3.6a7.8 7.8 0 0 1-.8 1.9l1.3 2-2.3 2.3-2-1.3a7.8 7.8 0 0 1-1.9.8l-.6 2.3h-3.2l-.6-2.3a7.8 7.8 0 0 1-1.9-.8l-2 1.3-2.3-2.3 1.3-2a7.8 7.8 0 0 1-.8-1.9L2 13.6v-3.2l2.3-.6a7.8 7.8 0 0 1 .8-1.9l-1.3-2 2.3-2.3 2 1.3a7.8 7.8 0 0 1 1.9-.8L10.4 2ZM12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/>
       </svg>
@@ -41,6 +52,7 @@
           <span class="meta-code" id="kicker">OPEN-SOURCE SUPPORT</span>
           <div class="tab-strip" role="group" aria-label="語言切換" data-lang-strip>
             <button type="button" class="tab-btn" data-tab="zh" data-lang="zh" aria-pressed="true">繁體中文</button>
+            <button type="button" class="tab-btn" data-tab="zh-cn" data-lang="zh-cn" aria-pressed="false">简体中文</button>
             <button type="button" class="tab-btn" data-tab="en" data-lang="en" aria-pressed="false">English</button>
           </div>
         </div>
@@ -88,13 +100,16 @@
     { name: 'Ko-fi', url: 'https://ko-fi.com/shu540886', icon: 'kofi', className: 'kofi' },
   ];
   const QR_CODES = [
-    { name: { zh: '微信支付', en: 'WeChat Pay' }, src: 'wechat-pay.png' },
-    { name: { zh: '支付寶', en: 'Alipay' }, src: 'alipay.png' },
+    { name: { zh: '微信支付', 'zh-cn': '微信支付', en: 'WeChat Pay' }, src: 'wechat-pay.png' },
+    { name: { zh: '支付寶', 'zh-cn': '支付宝', en: 'Alipay' }, src: 'alipay.png' },
   ];
 
   const TEXT = {
     zh: {
       lang: 'zh-Hant-TW',
+      homeHref: '../',
+      worksHref: '../#works',
+      guideHref: '../poexd/',
       docTitle: '支持開發 · shu (yehshune)',
       navLabel: '主要導覽',
       nav: { works: '作品', guide: '教學', support: '贊助' },
@@ -119,8 +134,40 @@
       qrCap: (name) => `${name}收款碼（掃碼或長按存圖）`,
       footer: '本站開源專案均為非官方社群作品，與 Grinding Gear Games 無隸屬或背書關係。'
     },
+    'zh-cn': {
+      lang: 'zh-Hans-CN',
+      homeHref: '../zh-cn/',
+      worksHref: '../zh-cn/#works',
+      guideHref: '../poexd/zh-cn/',
+      docTitle: '支持开发 · shu (yehshune)',
+      navLabel: '主导航',
+      nav: { works: '作品', guide: '教程', support: '赞助' },
+      crumbHome: '首页',
+      crumbCur: '赞助支持',
+      kicker: 'OPEN-SOURCE SUPPORT',
+      title: '支持开发',
+      desc: '我的项目（例如 PoeXD Extension）都免费且开源。如果它们帮你省下在《流放之路》网页市集查词缀和切换标签页的时间，欢迎通过本页赞助渠道支持后续维护。',
+      points: [
+        { code: '01 / MIT LICENSE', title: '永久免费与开源', desc: '不会将现有核心功能锁进付费墙，源码全部公开在 GitHub 供自由审查与使用。' },
+        { code: '02 / NO TELEMETRY', title: '零广告、零追踪', desc: '插件不植入广告、不设自有服务器，所有书签与设置都保存在你的浏览器本地。' },
+        { code: '03 / MAINTENANCE', title: '赛季词缀与兼容性维护', desc: '你的支持将直接用于维持 PoE 1／PoE 2 赛季更新后的词缀库校对与长期问题修复。' }
+      ],
+      starBtn: '去 GitHub 点颗星 ↗',
+      issueBtn: '反馈问题或建议 ↗',
+      consoleKicker: 'SPONSOR CHANNELS',
+      consoleHeading: '选择赞助方式',
+      cta: (name) => `前往 ${name} 赞助 ↗`,
+      qrHint: '或使用 App 扫描二维码（点击图片可放大，手机可长按保存后从相册扫码）',
+      qrTap: '点击放大扫码',
+      qrAlt: (name) => `${name}收款二维码`,
+      qrCap: (name) => `${name}收款码（扫码或长按存图）`,
+      footer: '本站开源项目均为非官方社区作品，与 Grinding Gear Games 或腾讯无隶属或背书关系。'
+    },
     en: {
       lang: 'en',
+      homeHref: '../',
+      worksHref: '../#works',
+      guideHref: '../poexd/',
       docTitle: 'Support Development · shu (yehshune)',
       navLabel: 'Primary navigation',
       nav: { works: 'Works', guide: 'Guide', support: 'Support' },
@@ -157,9 +204,13 @@
     document.documentElement.lang = t.lang;
     document.title = t.docTitle;
     document.getElementById('site-nav').setAttribute('aria-label', t.navLabel);
+    document.getElementById('nav-brand').href = t.homeHref;
+    document.getElementById('nav-works').href = t.worksHref;
     document.getElementById('nav-works').textContent = t.nav.works;
+    document.getElementById('nav-guide').href = t.guideHref;
     document.getElementById('nav-guide').textContent = t.nav.guide;
     document.getElementById('nav-support').textContent = t.nav.support;
+    document.getElementById('crumb-home').href = t.homeHref;
     document.getElementById('crumb-home').textContent = t.crumbHome;
     document.getElementById('crumb-cur').textContent = t.crumbCur;
     document.getElementById('kicker').textContent = t.kicker;
@@ -228,10 +279,11 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(location.search);
-    const paramLang = params.get('lang');
-    const initial = paramLang === 'en' || paramLang === 'zh'
+    const paramLang = (params.get('lang') || '').toLowerCase();
+    const browserLang = navigator.language || '';
+    const initial = paramLang === 'en' || paramLang === 'zh' || paramLang === 'zh-cn'
       ? paramLang
-      : (!/^zh/i.test(navigator.language) ? 'en' : 'zh');
+      : (!/^zh/i.test(browserLang) ? 'en' : (/^zh-(cn|sg|hans)/i.test(browserLang) ? 'zh-cn' : 'zh'));
 
     const strip = document.querySelector('[data-lang-strip]');
     const stripCtrl = window.__yehshuneUI && strip
@@ -246,5 +298,6 @@
     }
   });
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f3e4e3161cd447ea6e07ca4725444db"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
